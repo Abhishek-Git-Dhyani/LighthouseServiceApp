@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@color/pwe_fragment_background"
+    android:id="@+id/linear_discount_code_holder"
+    android:elevation="3dp"
+    android:visibility="gone"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linear_apply_discount_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/img_discount_icon2"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/text_available_discount_count"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="2 discount codes available"
+                android:textColor="@color/pwe_discount_available_text"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:gravity="center|center_vertical">
+            <TextView
+                android:id="@+id/text_apply_discount_forward"
+                android:layout_width="wrap_content"
+                android:background="@drawable/pwe_discount_view_change_background"
+                android:layout_height="wrap_content"
+                android:text="View &amp; Apply "
+                android:textColor="@color/pwe_discount_view_change_text"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/btn_apply_discount_forward"
+                android:layout_width="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_height="wrap_content"
+                android:text="View &amp; Apply "
+                android:textColor="@color/pwe_discount_view_change_text"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_applied_discount_code_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:gravity="center_vertical|center">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/img_discount_icon1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/text_applied_discount_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/pwe_discount_apply_text"
+                android:textSize="11sp"
+                android:maxLines="2"/>
+            <TextView
+                android:id="@+id/text_applied_discount_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/pwe_note_color"
+                android:textSize="11sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:orientation="horizontal"
+            android:gravity="center|center_vertical">
+
+            <TextView
+                android:id="@+id/text_reset_applied_discount_code"
+                android:background="@drawable/pwe_discount_view_change_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:visibility="gone"
+                android:paddingRight="15dp"
+                android:paddingBottom="5dp"
+                android:textColor="@color/pwe_discount_view_change_text"
+                android:textSize="12sp"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/btn_reset_applied_discount_code"
+                android:background="@drawable/pwe_discount_view_change_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change"
+                android:visibility="gone"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="5dp"
+                android:textColor="@color/pwe_discount_view_change_text"
+                android:textSize="12sp"
+                android:gravity="center" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/img_clear_applied_discount"
+                android:layout_width="15dp"
+                android:layout_height="20dp"
+                android:gravity="center"
+                android:src="@drawable/pwe_close_black"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:id="@+id/view_divider_discount_code"
+        android:layout_height="2dp"
+        android:background="@drawable/pwe_ic_dotted_line"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:id="@+id/linear_discounted_amount_holder"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <LinearLayout
+            android:id="@+id/linear_change_discount_code_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Discount"
+                    android:textColor="@color/pwe_discount_text"
+                    android:textSize="14sp"
+                    android:layout_weight="0.3"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="center_vertical|right">
+
+                <TextView
+                    android:id="@+id/text_discount_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textStyle="bold"
+                    android:textColor="@color/pwe_discount_apply_text"
+                    android:gravity="right|center" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payable Amount"
+                android:textColor="@color/pwe_discount_text"
+                android:textSize="14sp"
+                android:layout_weight="0.3"/>
+
+            <TextView
+                android:id="@+id/text_discounted_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/pwe_discount_amount_text"
+                android:textSize="14sp"
+                android:layout_weight="0.7"
+                android:gravity="right|center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/linear_discounted_conv_fee_holder">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Platform charges"
+                android:textColor="@color/pwe_discount_text"
+                android:textSize="14sp"
+                android:layout_weight="0.3"/>
+
+            <TextView
+                android:id="@+id/text_discounted_conv_fee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/pwe_discount_amount_text"
+                android:textSize="14sp"
+                android:layout_weight="0.7"
+                android:gravity="right|center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/pwe_discount_grand_total_background"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Payable Amount"
+                android:textColor="@color/pwe_text_color"
+                android:textSize="14sp"
+                android:layout_weight="0.2"/>
+
+            <TextView
+                android:id="@+id/text_total_payment_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textStyle="bold"
+                android:textColor="@color/pwe_discount_amount_text"
+                android:layout_weight="0.7"
+                android:gravity="right|center"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

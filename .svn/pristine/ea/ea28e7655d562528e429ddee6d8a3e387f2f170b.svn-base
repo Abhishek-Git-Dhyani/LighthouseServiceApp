@@ -1,0 +1,191 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.lighthouseservice"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:4:5-67
+11-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:4:22-64
+12
+13    <queries>
+13-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:6:5-13:15
+14        <package android:name="com.google.android.apps.nbu.paisa.user" />
+14-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:7:7-72
+14-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:7:16-69
+15        <package android:name="net.one97.paytm" />
+15-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:8:7-49
+15-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:8:16-46
+16        <package android:name="com.phonepe.app" />
+16-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:9:7-49
+16-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:9:16-46
+17        <package android:name="in.org.npci.upiapp" />
+17-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:10:7-52
+17-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:10:16-49
+18        <package android:name="in.amazon.mShop.android.shopping" />
+18-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:11:7-66
+18-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:11:16-63
+19        <package android:name="com.whatsapp" />
+19-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:12:7-46
+19-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:12:16-43
+20    </queries>
+21
+22    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+22-->[:peb-lib-android-x:] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b76deae032254800854ca2dd07c70194\transformed\jetified-peb-lib-android-x\AndroidManifest.xml:14:5-79
+22-->[:peb-lib-android-x:] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b76deae032254800854ca2dd07c70194\transformed\jetified-peb-lib-android-x\AndroidManifest.xml:14:22-76
+23
+24    <application
+24-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:15:5-34:19
+25        android:name="com.lighthouseservice.MainApplication"
+25-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:16:7-38
+26        android:allowBackup="true"
+26-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:20:7-33
+27        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+27-->[androidx.core:core:1.8.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\6be23c5517985f19fcabc9b798caadc5\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
+28        android:hardwareAccelerated="true"
+28-->[:peb-lib-android-x:] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b76deae032254800854ca2dd07c70194\transformed\jetified-peb-lib-android-x\AndroidManifest.xml:18:9-43
+29        android:icon="@mipmap/ic_launcher"
+29-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:18:7-41
+30        android:label="@string/app_name"
+30-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:17:7-39
+31        android:roundIcon="@mipmap/ic_launcher_round"
+31-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:19:7-52
+32        android:supportsRtl="true"
+32-->[:peb-lib-android-x:] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b76deae032254800854ca2dd07c70194\transformed\jetified-peb-lib-android-x\AndroidManifest.xml:20:9-35
+33        android:theme="@style/AppTheme" >
+33-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:21:7-38
+34        <activity
+34-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:22:7-33:18
+35            android:name="com.lighthouseservice.MainActivity"
+35-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:23:9-37
+36            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+36-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:25:9-118
+37            android:exported="true"
+37-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:28:9-32
+38            android:label="@string/app_name"
+38-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:24:9-41
+39            android:launchMode="singleTask"
+39-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:26:9-40
+40            android:windowSoftInputMode="adjustNothing" >
+40-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:27:9-52
+41            <intent-filter>
+41-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:29:9-32:25
+42                <action android:name="android.intent.action.MAIN" />
+42-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:30:13-65
+42-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:30:21-62
+43
+44                <category android:name="android.intent.category.LAUNCHER" />
+44-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:31:13-73
+44-->F:\MobileApplications\LightHouseService\android\app\src\main\AndroidManifest.xml:31:23-70
+45            </intent-filter>
+46        </activity>
+47        <activity
+47-->[:peb-lib-android-x:] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b76deae032254800854ca2dd07c70194\transformed\jetified-peb-lib-android-x\AndroidManifest.xml:21:9-26:20
+48            android:name="com.easebuzz.payment.kit.PWEBankPageActivity"
+48-->[:peb-lib-android-x:] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b76deae032254800854ca2dd07c70194\transformed\jetified-peb-lib-android-x\AndroidManifest.xml:22:13-72
+49            android:launchMode="singleTop"
+49-->[:peb-lib-android-x:] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b76deae032254800854ca2dd07c70194\transformed\jetified-peb-lib-android-x\AndroidManifest.xml:23:13-43
+50            android:screenOrientation="portrait"
+50-->[:peb-lib-android-x:] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b76deae032254800854ca2dd07c70194\transformed\jetified-peb-lib-android-x\AndroidManifest.xml:24:13-49
+51            android:theme="@style/PWENoABar" >
+51-->[:peb-lib-android-x:] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b76deae032254800854ca2dd07c70194\transformed\jetified-peb-lib-android-x\AndroidManifest.xml:25:13-45
+52        </activity>
+53        <activity
+53-->[:peb-lib-android-x:] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b76deae032254800854ca2dd07c70194\transformed\jetified-peb-lib-android-x\AndroidManifest.xml:27:9-33:60
+54            android:name="com.easebuzz.payment.kit.PWECouponsActivity"
+54-->[:peb-lib-android-x:] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b76deae032254800854ca2dd07c70194\transformed\jetified-peb-lib-android-x\AndroidManifest.xml:28:13-71
+55            android:label="Select Coupons"
+55-->[:peb-lib-android-x:] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b76deae032254800854ca2dd07c70194\transformed\jetified-peb-lib-android-x\AndroidManifest.xml:29:13-43
+56            android:launchMode="singleTop"
+56-->[:peb-lib-android-x:] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b76deae032254800854ca2dd07c70194\transformed\jetified-peb-lib-android-x\AndroidManifest.xml:30:13-43
+57            android:screenOrientation="portrait"
+57-->[:peb-lib-android-x:] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b76deae032254800854ca2dd07c70194\transformed\jetified-peb-lib-android-x\AndroidManifest.xml:31:13-49
+58            android:theme="@style/PWENoABar"
+58-->[:peb-lib-android-x:] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b76deae032254800854ca2dd07c70194\transformed\jetified-peb-lib-android-x\AndroidManifest.xml:32:13-45
+59            android:windowSoftInputMode="stateUnchanged" />
+59-->[:peb-lib-android-x:] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b76deae032254800854ca2dd07c70194\transformed\jetified-peb-lib-android-x\AndroidManifest.xml:33:13-57
+60
+61        <service
+61-->[:peb-lib-android-x:] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b76deae032254800854ca2dd07c70194\transformed\jetified-peb-lib-android-x\AndroidManifest.xml:35:9-38:44
+62            android:name="com.easebuzz.payment.kit.PWETimerService"
+62-->[:peb-lib-android-x:] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b76deae032254800854ca2dd07c70194\transformed\jetified-peb-lib-android-x\AndroidManifest.xml:36:13-68
+63            android:enabled="true"
+63-->[:peb-lib-android-x:] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b76deae032254800854ca2dd07c70194\transformed\jetified-peb-lib-android-x\AndroidManifest.xml:37:13-35
+64            android:stopWithTask="false" />
+64-->[:peb-lib-android-x:] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b76deae032254800854ca2dd07c70194\transformed\jetified-peb-lib-android-x\AndroidManifest.xml:38:13-41
+65
+66        <activity
+66-->[com.google.android.gms:play-services-auth:17.0.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\8fb435529e432a6771762efad78feaab\transformed\jetified-play-services-auth-17.0.0\AndroidManifest.xml:23:9-27:75
+67            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+67-->[com.google.android.gms:play-services-auth:17.0.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\8fb435529e432a6771762efad78feaab\transformed\jetified-play-services-auth-17.0.0\AndroidManifest.xml:24:13-93
+68            android:excludeFromRecents="true"
+68-->[com.google.android.gms:play-services-auth:17.0.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\8fb435529e432a6771762efad78feaab\transformed\jetified-play-services-auth-17.0.0\AndroidManifest.xml:25:13-46
+69            android:exported="false"
+69-->[com.google.android.gms:play-services-auth:17.0.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\8fb435529e432a6771762efad78feaab\transformed\jetified-play-services-auth-17.0.0\AndroidManifest.xml:26:13-37
+70            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+70-->[com.google.android.gms:play-services-auth:17.0.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\8fb435529e432a6771762efad78feaab\transformed\jetified-play-services-auth-17.0.0\AndroidManifest.xml:27:13-72
+71        <!--
+72            Service handling Google Sign-In user revocation. For apps that do not integrate with
+73            Google Sign-In, this service will never be started.
+74        -->
+75        <service
+75-->[com.google.android.gms:play-services-auth:17.0.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\8fb435529e432a6771762efad78feaab\transformed\jetified-play-services-auth-17.0.0\AndroidManifest.xml:33:9-36:110
+76            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+76-->[com.google.android.gms:play-services-auth:17.0.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\8fb435529e432a6771762efad78feaab\transformed\jetified-play-services-auth-17.0.0\AndroidManifest.xml:34:13-89
+77            android:exported="true"
+77-->[com.google.android.gms:play-services-auth:17.0.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\8fb435529e432a6771762efad78feaab\transformed\jetified-play-services-auth-17.0.0\AndroidManifest.xml:35:13-36
+78            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+78-->[com.google.android.gms:play-services-auth:17.0.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\8fb435529e432a6771762efad78feaab\transformed\jetified-play-services-auth-17.0.0\AndroidManifest.xml:36:13-107
+79
+80        <activity
+80-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\37f8ffa3ec488a48f4844b49ea25bc5d\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+81            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+81-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\37f8ffa3ec488a48f4844b49ea25bc5d\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+82            android:exported="false"
+82-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\37f8ffa3ec488a48f4844b49ea25bc5d\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+83            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+83-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\37f8ffa3ec488a48f4844b49ea25bc5d\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+84
+85        <meta-data
+85-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\c0b86808731a4a9f10bb9c1bec75b274\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+86            android:name="com.google.android.gms.version"
+86-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\c0b86808731a4a9f10bb9c1bec75b274\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+87            android:value="@integer/google_play_services_version" />
+87-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\c0b86808731a4a9f10bb9c1bec75b274\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+88        <meta-data
+88-->[com.github.bumptech.glide:okhttp3-integration:4.12.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\46efb808426beeaac92ff8c136b6a113\transformed\jetified-okhttp3-integration-4.12.0\AndroidManifest.xml:11:9-13:43
+89            android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule"
+89-->[com.github.bumptech.glide:okhttp3-integration:4.12.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\46efb808426beeaac92ff8c136b6a113\transformed\jetified-okhttp3-integration-4.12.0\AndroidManifest.xml:12:13-84
+90            android:value="GlideModule" />
+90-->[com.github.bumptech.glide:okhttp3-integration:4.12.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\46efb808426beeaac92ff8c136b6a113\transformed\jetified-okhttp3-integration-4.12.0\AndroidManifest.xml:13:13-40
+91
+92        <provider
+92-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\4715a336290b1a0f981db01001cfd130\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+93            android:name="androidx.startup.InitializationProvider"
+93-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\4715a336290b1a0f981db01001cfd130\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+94            android:authorities="com.lighthouseservice.androidx-startup"
+94-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\4715a336290b1a0f981db01001cfd130\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+95            android:exported="false" >
+95-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\4715a336290b1a0f981db01001cfd130\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+96            <meta-data
+96-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\4715a336290b1a0f981db01001cfd130\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+97                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+97-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\4715a336290b1a0f981db01001cfd130\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+98                android:value="androidx.startup" />
+98-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\4715a336290b1a0f981db01001cfd130\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+99            <meta-data
+99-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b8ce940bc6cbcdbb40a600f9a8fd3b32\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+100                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+100-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b8ce940bc6cbcdbb40a600f9a8fd3b32\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+101                android:value="androidx.startup" />
+101-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Abhishek Dhyani\.gradle\caches\transforms-3\b8ce940bc6cbcdbb40a600f9a8fd3b32\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+102        </provider>
+103    </application>
+104
+105</manifest>

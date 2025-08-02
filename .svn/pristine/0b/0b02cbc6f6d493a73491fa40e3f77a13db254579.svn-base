@@ -1,0 +1,61 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/pwe_fragment_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:background="@drawable/pwe_custom_card_background">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Selected Coupon Amount"
+                    android:textColor="@color/pwe_text_color"
+                    android:textSize="14sp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/txt_selected_coupon_worth"
+                    android:text=""
+                    android:textColor="@color/pwe_text_color"
+                    android:textSize="14sp"
+                    android:gravity="right"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.easebuzz.payment.kit.ExpandableHeightGridView
+            android:id="@+id/grid_coupon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="2"
+            />
+    </LinearLayout>
+
+</FrameLayout>

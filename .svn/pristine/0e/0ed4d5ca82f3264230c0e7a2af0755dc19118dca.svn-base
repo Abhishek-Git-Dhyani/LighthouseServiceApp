@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:background="@drawable/pwe_custom_card_gray_background"
+    android:padding="10dp"
+    android:elevation="2dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/pwe_text_color"
+            android:text="Please provide us some feedback"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="You have chosen to abort this transaction. Could you please tell us why?"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="14sp"/>
+
+        <ListView
+            android:id="@+id/listview_cancellation_reasons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:divider="@null"
+            android:background="@color/pwe_fragment_background"
+            android:scrollbars="none"
+            android:focusedByDefault="true" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:id="@+id/linear_other_reason_text_holder">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/pwe_note_color"
+                android:gravity="left"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:text="Please describe below"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:maxLines="5"
+                android:minLines="1"
+                android:padding="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/edit_other_reason"
+                android:textSize="13sp"
+                android:textColor="@color/pwe_text_color"
+                android:textColorHint="@color/pwe_note_color"
+                android:gravity="top|left"
+                android:minHeight="35dp"
+                android:background="@drawable/custom_background_white"
+                android:hint="Type here.."/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="bottom">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:textColor="@color/green"
+                android:minHeight="50dp"
+                android:text="Continue Transaction"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:textSize="14sp"
+                android:id="@+id/button_continue_transaction" />
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:textColor="@color/pwe_cancel_button_text_color"
+                android:minHeight="50dp"
+                android:text="Abort Transaction"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:textSize="14sp"
+                android:id="@+id/button_abort_transaction" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!--EMI Banks layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linear_emi_banks_holder"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+        <ListView
+            android:id="@+id/list_emi_banks"
+            android:layout_width="match_parent"
+            android:divider="@null"
+            android:scrollbars="none"
+            android:layout_height="match_parent"
+            android:background="@color/pwe_fragment_background"
+            android:focusedByDefault="true" />
+
+
+
+    </LinearLayout>
+
+    <!--EMI Banks layout ends-->
+
+
+    <!--EMI Option error Layout-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linear_no_emi_options_error"
+        android:layout_margin="10dp"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_emi_option_error"
+            android:padding="5dp"
+            android:gravity="center_horizontal"
+            android:textSize="16sp"
+            android:textColor="@color/pwe_error_color"
+            android:layout_marginBottom="5dp"
+            android:text=""
+            android:layout_margin="5dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="fill_parent">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/pwe_custom_pay_button_background"
+                android:textColor="@color/pwe_button_text_color"
+                android:minHeight="50dp"
+                android:text="Go back"
+                android:textSize="14sp"
+                android:padding="5dp"
+                android:textAllCaps="false"
+                android:id="@+id/button_back_to_payment_option"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--EMI Option error Layout ends-->
+
+</LinearLayout>

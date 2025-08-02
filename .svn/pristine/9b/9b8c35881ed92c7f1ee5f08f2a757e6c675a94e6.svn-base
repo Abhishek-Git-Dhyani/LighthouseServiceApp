@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/drawable-watch-v20/abc_dialog_material_background.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/drawable-watch-v20/abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/drawable-watch-v20/common_google_signin_btn_text_dark_normal.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-play-services-auth-17.0.0-13:/drawable-watch-v20/common_google_signin_btn_text_dark_normal.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/drawable-watch-v20/common_google_signin_btn_text_light_normal.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-play-services-auth-17.0.0-13:/drawable-watch-v20/common_google_signin_btn_text_light_normal.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/drawable-watch-v20/common_google_signin_btn_text_disabled.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-play-services-auth-17.0.0-13:/drawable-watch-v20/common_google_signin_btn_text_disabled.xml"
+    }
+]

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/pwe_custom_card_gray_background"
+    android:padding="10dp"
+    android:elevation="2dp"
+    android:id="@+id/linear_root_debit_credit">
+
+        <TextView
+            android:id="@+id/text_card_type_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textColor="@color/pwe_title_color"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:text=""
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/card_number_holder"
+                        android:background="@drawable/custom_background_white">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:orientation="horizontal"
+                            android:padding="3dp"
+                            >
+
+                            <EditText
+                                android:id="@+id/edit_card_number"
+                                android:layout_width="match_parent"
+                                android:background="@color/white"
+                                android:layout_height="wrap_content"
+                                android:hint="Enter card number"
+                                android:inputType="phone"
+                                android:maxLength="23"
+                                android:layout_marginRight="1dp"
+                                android:textColor="@color/pwe_text_color"
+                                android:textColorHint="@color/pwe_hint_color"
+                                android:textSize="12sp"
+                                android:layout_weight="1"
+                                android:minHeight="33dp"
+                                />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical|right"
+                                android:layout_weight="3">
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="32dp"
+                                    android:id="@+id/imgv_card_type"
+                                    android:src="@drawable/ic_default_card_type"/>
+                            </LinearLayout>
+
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/text_card_no_error"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:textColor="@color/pwe_error_color"
+                        android:textSize="12sp"
+                        android:lines="2"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linear_exp_date_holder_dc"
+                        android:background="@drawable/custom_background_white">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="3dp">
+
+                            <EditText
+                                android:id="@+id/edit_expiry_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:hint="MM/YYYY"
+                                android:minHeight="33dp"
+                                android:inputType="number"
+                                android:maxLength="7"
+                                android:textColor="@color/pwe_text_color"
+                                android:textColorHint="@color/pwe_hint_color"
+                                android:textSize="12sp"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/text_expiry_date_error"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:visibility="gone"
+                        android:textColor="@color/pwe_error_color"
+                        android:textSize="12sp"
+                        android:lines="2"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/card_name_holder"
+                        android:background="@drawable/custom_background_white">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="3dp">
+
+                            <EditText
+                                android:id="@+id/edit_name_on_card"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:hint="Name on card"
+                                android:minHeight="33dp"
+                                android:inputType="textPersonName"
+                                android:textColor="@color/pwe_text_color"
+                                android:textColorHint="@color/pwe_hint_color"
+                                android:textSize="12sp"/>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/text_name_on_card_error"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:textColor="@color/pwe_error_color"
+                        android:textSize="12sp"
+                        android:lines="2"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/cvv_number_holder"
+                        android:background="@drawable/custom_background_white">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="3dp">
+
+                            <EditText
+                                android:id="@+id/edit_cvv_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:hint="CVV"
+                                android:minHeight="33dp"
+                                android:inputType="numberPassword"
+                                android:maxLength="4"
+                                android:nextFocusDown="@id/edit_name_on_card"
+                                android:textColor="@color/pwe_text_color"
+                                android:textColorHint="@color/pwe_hint_color"
+                                android:textSize="12sp"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/text_cvv_error"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:visibility="gone"
+                        android:textColor="@color/pwe_error_color"
+                        android:textSize="12sp"
+                        android:lines="2"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_check_save_card_holder"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/check_save_card"
+                    android:layout_width="20dp"
+                    android:buttonTint="@color/pwe_check_button_colors"
+                    android:layout_height="20dp"
+                    android:button="@xml/new_check" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Save my card"
+                    android:textColor="@color/pwe_icon_text_color" />
+
+            </LinearLayout>
+
+
+            <include layout="@layout/pwe_pay_button_layout"/>
+        </LinearLayout>
+
+
+
+</LinearLayout>

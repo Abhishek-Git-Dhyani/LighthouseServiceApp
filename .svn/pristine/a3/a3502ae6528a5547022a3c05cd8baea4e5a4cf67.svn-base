@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <solid android:color="@color/pwe_selected_item_background"/>
+
+    <stroke
+        android:width="2.5dp"
+        android:color="@color/pwe_selected_item_border"/>
+
+    <corners
+        android:bottomRightRadius="1dp"
+        android:bottomLeftRadius="1dp"
+        android:topLeftRadius="1dp"
+        android:topRightRadius="1dp"/>
+
+</shape>

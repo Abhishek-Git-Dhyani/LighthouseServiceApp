@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:background="@drawable/pwe_custom_card_gray_background"
+    android:padding="10dp"
+    android:elevation="2dp"
+    android:orientation="vertical"
+    android:id="@+id/linear_upi_apps_root">
+
+    <TextView
+        android:id="@+id/text_card_type_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textColor="@color/pwe_title_color"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="UPI"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/linear_upi_intents_holder"
+            android:elevation="3dp"
+            android:background="@drawable/pwe_custom_card_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_pwe_other_upi_app"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.01">
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="35dp"
+                        android:background="@color/pwe_vertical_divider_payment_options_list" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/text_pay_using_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="PAY USING"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:textColor="@color/pwe_title_color"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/text_pay_using_note"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="You will be redirected to your UPI app"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:textSize="11sp"
+                        android:textColor="@color/pwe_note_color"
+                        />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+            <com.easebuzz.payment.kit.ExpandableHeightGridView
+                android:id="@+id/grid_upi_options"
+                android:layout_width="match_parent"
+                android:numColumns="3"
+                android:layout_height="wrap_content"
+                android:padding="5dp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:visibility="visible"
+                android:id="@+id/linear_upi_address_holder"
+                android:orientation="vertical"
+                android:background="@drawable/pwe_custom_card_background"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:layout_marginTop="10dp"
+                android:elevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:gravity="center"
+                        android:layout_marginLeft="5dp">
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_pwe_other_upi_app"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.01">
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="35dp"
+                            android:background="@color/pwe_vertical_divider_payment_options_list" />
+
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/text_pay_using_upi_id_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="PAY USING UPI ID"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:textColor="@color/pwe_title_color"
+                            android:textSize="14sp"/>
+
+                        <TextView
+                            android:id="@+id/text_pay_using_upiId_note"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="You will receive a payment request on your UPI app"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:textSize="11sp"
+                            android:textColor="@color/pwe_note_color"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+                <EditText
+                    android:id="@+id/edit_upi_username"
+                    android:layout_width="match_parent"
+                    android:padding="5dp"
+                    android:hint="Enter your UPI ID"
+                    android:singleLine="true"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:textSize="14sp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/pwe_text_color"
+                    android:textColorHint="@color/pwe_hint_color"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:imeOptions="actionDone"
+                    />
+
+            </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_upi_address_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:visibility="gone"
+            android:textColor="@color/pwe_error_color"
+            android:textSize="14sp"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/pwe_custom_card_background"
+            android:id="@+id/linear_upi_qr_holder"
+            android:elevation="3dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:gravity="center"
+                android:layout_marginLeft="5dp">
+
+                <ImageView
+                    android:id="@+id/image_upi_qr"
+                    android:layout_width="30dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/pwe_qrcode"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.01">
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="35dp"
+                    android:background="@color/pwe_vertical_divider_payment_options_list"
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:padding="5dp">
+
+
+                <TextView
+                    android:id="@+id/text_upi_qr_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minLines="1"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center"
+                    android:textColor="@color/pwe_title_color"
+                    android:textSize="14sp"
+                    android:text="SHOW UPI QR"
+                    />
+
+                <TextView
+                    android:id="@+id/text_upi_qr_note"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minLines="1"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center"
+                    android:textColor="@color/pwe_note_color"
+                    android:textSize="11sp"
+                    android:layout_marginTop="5dp"
+                    android:text="You can scan UPI QR code and pay"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="gone"
+        android:id="@+id/linear_upi_autodebit_address_holder"
+        android:orientation="vertical"
+        android:background="@drawable/pwe_custom_card_background"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="3dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:gravity="center"
+                android:layout_marginLeft="5dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_pwe_other_upi_app"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.01">
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="35dp"
+                    android:background="@color/pwe_vertical_divider_payment_options_list" />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/text_upi_id_autodebit_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PAY USING UPI ID"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textColor="@color/pwe_title_color"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/text_upiId_autodebit_note"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="You will receive a payment request on your UPI app"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="11sp"
+                    android:textColor="@color/pwe_note_color"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <EditText
+            android:id="@+id/edit_upi_autodebit_username"
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:hint="Enter your UPI ID"
+            android:singleLine="true"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:textColor="@color/pwe_text_color"
+            android:textColorHint="@color/pwe_hint_color"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            />
+
+        <TextView
+            android:id="@+id/text_upi_address_autodebit_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:visibility="gone"
+            android:textColor="@color/pwe_error_color"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+
+
+    <include layout="@layout/pwe_pay_button_layout"/>
+
+</LinearLayout>
+

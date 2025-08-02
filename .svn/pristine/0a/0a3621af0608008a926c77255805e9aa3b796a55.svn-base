@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/values-small-v4/values-small-v4.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Abhishek Dhyani\\.gradle\\caches\\transforms-3\\a3c8018198471f6c56ffc034fb651049\\transformed\\material-1.3.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,128,198,270",
+                        "endColumns": "72,69,71,69",
+                        "endOffsets": "123,193,265,335"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.easebuzz.react-native-easebuzz-kit-mergeReleaseResources-28:/values-small-v4/values-small-v4.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Abhishek Dhyani\\.gradle\\caches\\transforms-3\\a3c8018198471f6c56ffc034fb651049\\transformed\\material-1.3.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,128,198,270",
+                        "endColumns": "72,69,71,69",
+                        "endOffsets": "123,193,265,335"
+                    }
+                }
+            ]
+        }
+    ]
+}

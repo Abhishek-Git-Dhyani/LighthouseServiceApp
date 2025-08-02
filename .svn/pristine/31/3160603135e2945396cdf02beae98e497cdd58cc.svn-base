@@ -1,0 +1,1546 @@
+
+import {
+  View,
+  Button,
+  Text,
+  TextInput,
+  StyleSheet,
+  ImageBackground,
+  Image,
+  FlatList,
+  TouchableOpacity,
+  Modal,
+  Linking,
+  Alert,
+} from 'react-native';
+import * as React from 'react';
+import {Color, ColorBlueTheme, FontFamily, FontSize} from '../../GlobalStyles';
+import FastImage from 'react-native-fast-image';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {LineChart, BarChart} from 'react-native-gifted-charts';
+import ToggleSwitch from 'toggle-switch-react-native';
+import DatePicker from 'react-native-date-picker';
+import {constructFrom, format} from 'date-fns';
+import notifee from '@notifee/react-native';
+// import {AndroidColor} from '@notifee/react-native';
+
+import RNHTMLtoPDF from 'react-native-html-to-pdf';
+import { PermissionsAndroid } from 'react-native';
+import RNFetchBlob from 'rn-fetch-blob'
+
+import moment from 'moment';
+import { blue100 } from 'react-native-paper/lib/typescript/styles/themes/v2/colors';
+
+const Dashboard = props => {
+  let data;
+
+  let currentData =  moment().format('YYYY-MM-DD');
+
+  const [userName, setUserName] = React.useState('');
+  const [meterNumber, setMeterNumber] = React.useState('');
+  const [token, setToken] = React.useState('');
+
+  const [balance, setBalance] = React.useState(undefined);
+  const [consumerName, setConsumerName] = React.useState(undefined);
+  const [deviceId, setDeviceId] = React.useState(undefined);
+  const [eBRate, setEbRate] = React.useState(undefined);
+  const [isDeleted, setIsDeleted] = React.useState(undefined);
+  const [lastUpdatedData, setLastUpdatedDate] = React.useState(undefined);
+  const [notificationCount, setNotificationCount] = React.useState(undefined);
+  const [todayActiveEnergy, setTodayActiveEnergy] = React.useState(undefined);
+  const [yesterdayCummEnergy, setYesterdayCummEnergy] =
+    React.useState(undefined);
+  const [peakLoad, setPeakLoad] = React.useState(0);
+  const [operatingMode, setOperatingMode] = React.useState('EB');
+
+  const [showConsumptionModal, setConsumptionModal] = React.useState(false);
+  const [showSettingsModal, setshowSettingModal] = React.useState(false);
+  const [showHelpModal, setShowHelpModal] = React.useState(false);
+
+  const [consumptionDataType, setConsumptionDataType] = React.useState('none');
+
+  //Settings Modal
+  const [lowBalanceAlert, setLowBalanceAlert] = React.useState(false);
+  const [notificationAlert, setNotificationAlert] = React.useState(false);
+  const [powercutAlert, setPowercutAlert] = React.useState(false);
+  const [dgSenseAlert, setdgsenseAlert] = React.useState(false);
+
+  //userProfile
+  const [profileName, setProfileName] = React.useState();
+  const [phoneNumber, setPhoneNumber] = React.useState();
+  const [email, setEmail] = React.useState();
+  const [meterSerialNumber, setMeterSerialNumber] = React.useState();
+
+  const [activePower, setactivePower] = React.useState();
+  const [apparentPower, setapparentPower] = React.useState();
+  const [kvahDG, setkvahDG] = React.useState();
+  const [kvahGrid, setkvahGrid] = React.useState();
+  const [kwhDG, setkwhDG] = React.useState();
+  const [kwhGrid, setkwhGrid] = React.useState();
+  const [powerFactor, setpowerFactor] = React.useState();
+  const [updatedDate, setupdatedDate] = React.useState();
+  const [voltage1, setvoltage1] = React.useState();
+  const [voltage2, setvoltage2] = React.useState();
+  const [voltage3, setvoltage3] = React.useState();
+  const [registersID, setregistersID] = React.useState();
+  const [watts1, setwatts1] = React.useState();
+  const [watts2, setwatts2] = React.useState();
+  const [watts3, setwatts3] = React.useState();
+
+  const [fromdate, setfromDate] = React.useState(new Date());
+  const [todate, setToDate] = React.useState(new Date());
+  const [fromOpen, setfromOpen] = React.useState(false);
+  const [toOpen, settoOpen] = React.useState(false);
+  const [rechargeData, setRechargeData] = React.useState([]);
+
+  const [showColorModal, setColorMoodal] = React.useState(false);
+
+  const [filePath, setFilePath] = React.useState('');
+
+  const requestStoragePermission = async () => {
+    try {
+      const granted = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+        {
+          title: 'Storage Permission',
+          message: 'App needs access to your storage to save the PDF file.',
+          buttonNeutral: 'Ask Me Later',
+          buttonNegative: 'Cancel',
+          buttonPositive: 'OK',
+        }
+      );
+  
+      return granted === PermissionsAndroid.RESULTS.GRANTED;
+    } catch (err) {
+      console.warn(err);
+      return false;
+    }
+  };
+
+  const createPDF = async () => {
+    try {
+      requestStoragePermission();
+
+      let PDFOptions = {
+        html: `
+        <body style="padding:20px; display:flex; flex-direction:column; align-items:center; height:100vh; text-align:center;">
+          <h2 style="color: ${(ColorBlueTheme.Blue8)}; font-weight: light; text-decoration: underline;">LightHouseIoT Solutions Pvt. Ltd.</h2>
+          <h3 style="color: ${(ColorBlueTheme.Blue6)};">Recharge Invoice</h3>
+
+          <div style="width: 80%; border: 0.5px solid blue; border-radius: 15px; padding: 10px; text-align: left;">
+            <p style="color: ${(ColorBlueTheme.Blue6)};">User Name : ${userName}</p>
+            <p style="color: ${(ColorBlueTheme.Blue6)};">Email : ${email}</p>
+            <p style="color: ${(ColorBlueTheme.Blue6)};">Meter Serial No. : ${meterNumber}</p>
+          </div>
+
+          <hr>
+
+          <table border="1" cellspacing="0" cellpadding="5">
+            <tr style="background-color: ${Color.colorNative}; color: white;">
+              <th>Recharge Date</th>
+              <th>Transaction ID</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+            ${rechargeData.map(item => {
+              // Only render rows where the status is "Success"
+              // if (item.status !== "Success" || item.status !== "success") return '';
+
+              return `
+                <tr>
+                  <td>${item.rechargeDate}</td>
+                  <td>${item.transactionID}</td>
+                  <td>${item.amount}</td>                       
+                  <td style="color: green;">${item.status}</td>  
+                </tr>
+              `;
+            }).join('')}
+          </table>
+
+          <footer style="width: 100%; text-align: center;">
+            <p style="color: black; font-weight: light; text-decoration: underline; position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; padding: 10px 0;">&#169; 2024 LightHouseIoT, All Right Reserved</p>
+          </footer>
+          
+      </body>`,
+        fileName: `LHT_Recharge_${currentData}`,
+        directory: Platform.OS === 'android' ? 'Download' : 'Documents',
+        base64: true
+      };
+      let file = await RNHTMLtoPDF.convert(PDFOptions);
+
+      let filePath = RNFetchBlob.fs.dirs.DownloadDir + `/LHT_Recharge_${userName}_${currentData}.pdf`;
+
+      console.log(RNFetchBlob.fs.dirs.DownloadDir);
+
+      RNFetchBlob.fs.writeFile(filePath, file.base64, 'base64').then(
+        response => {
+          console.log('Success log', response);
+        }
+      ).catch(errors => console.log('Error Log', errors))
+
+      console.log(file.filePath);
+      setFilePath(file.filePath);
+      Alert.alert("Recharge Invoice Downloaded Successfully", "Open it from Download folder", setRechargeHistory(false));
+    } catch (error) {
+      console.log('Failed to generate pdf', error.message);
+      Alert.alert('Failed to generate pdf', error.message, setRechargeHistory(false));
+    }
+  };
+
+  const logout = async () => {
+    let tokenExist = await AsyncStorage.getItem('user_Token');
+    if (tokenExist != null) {
+      AsyncStorage.removeItem('user_Token');
+      props.navigation.replace('Login');
+    }
+  };
+  
+  const getOngoingData = async () => {
+    const url = 'https://api.lighthouseiot.in/api/v1.0/Consumer/OnGoingReport';
+    let response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    response = await response.json();
+
+    setactivePower(response.data.activePower);
+    setapparentPower(response.data.apparentPower);
+    setkvahDG(response.data.kvahDG);
+    setkvahGrid(response.data.kvahGrid);
+    setkwhDG(response.data.kwhDG);
+    setkwhGrid(response.data.kwhGrid);
+    setpowerFactor(response.data.powerFactor);
+    setregistersID(response.data.registersID);
+    setupdatedDate(response.data.updatedDate);
+    setvoltage1(response.data.voltage1);
+    setvoltage2(response.data.voltage2);
+    setvoltage3(response.data.voltage3);
+    setwatts1(response.data.watts1);
+    setwatts2(response.data.watts2);
+    setwatts3(response.data.watts3);
+
+    // console.log(response.data);
+    setOnGoingReport();
+  };
+
+  const getRechargeHistory = async () => {
+    let fromDate = format(fromdate, 'yyyy-MM-dd').toString();
+    let toDate = format(todate, 'yyyy-MM-dd').toString();
+
+    // console.log(token);
+    const url = `https://api.lighthouseiot.in/api/v1.0/Consumer/GetRechargeHistory?FromDate=${fromDate}&ToDate=${toDate}`;
+    let response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    response = await response.json();
+    console.log(response.data);
+    setRechargeData(response.data);
+    setShowList(true);
+  };
+
+  const NotifyAlert = async () => {
+    await notifee.requestPermission();
+
+    const channelId = await notifee.createChannel({
+      id: 'default',
+      name: 'Default Channel',
+      vibration: true,
+      sound: "defaul",
+    });
+
+    await notifee.displayNotification({
+      title: 'Low Balance',
+      body: 'Your Meter is Running on Low balance Please Recharge ASAP.',
+      android: {
+        channelId,
+        // smallIcon: 'name-of-a-small-icon', // optional, defaults to 'ic_launcher'.
+        // // pressAction is needed if you want the notification to open the app when pressed
+        // pressAction: {
+        //   id: 'default',
+        // },
+      },
+    });
+  };
+
+  const [onGoingReport, setOnGoingReport] = React.useState(false);
+  const [rechargeHistory, setRechargeHistory] = React.useState(false);
+  const [showList, setShowList] = React.useState(false);
+
+  React.useEffect(() => {
+    getToken();
+  }, []);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      if (balance < 10000) {
+        NotifyAlert();
+      }
+    }, 2000);
+  }, [balance]);
+
+  const getToken = async () => {
+    let tokenDetail = await AsyncStorage.getItem('user_Token');
+    data = await JSON.parse(tokenDetail);
+    setUserName(data.fullName);
+    setMeterNumber(data.userName);
+    setToken(data.token);
+    DashboardData();
+    MyProfile();
+  };
+
+  const DashboardData = async () => {
+    const url = 'https://api.lighthouseiot.in/api/v1.0/Consumer/Dashboard';
+    let response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${data.token}`,
+        'Content-Type': 'application/json',
+      },
+    });
+
+    response = await response.json();
+
+    setBalance(response.data.balance);
+    setConsumerName(response.data.consumerName);
+    setDeviceId(response.data.deviceID);
+    setEbRate(response.data.eBRATE);
+    setIsDeleted(response.data.isDeleted);
+    setLastUpdatedDate(response.data.lastUpdatedDate);
+    setNotificationCount(response.data.notificationCount);
+    setTodayActiveEnergy(response.data.todayActiveEnergy);
+    setYesterdayCummEnergy(response.data.yesterdayCummulativeActiveEnergy);
+  };
+
+  const MyProfile = async () => {
+    const url = 'https://api.lighthouseiot.in/api/v1.0/Consumer/MyProfile';
+    let userData = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${data.token}`,
+      },
+    });
+    userData = await userData.json();
+    // console.log(userData);
+    setProfileName(userData.data.accountName);
+    setPhoneNumber(userData.data.mobileNumber);
+    setEmail(userData.data.email);
+    setMeterSerialNumber(userData.data.accountNo);
+  };
+
+  const resetSettings = () => {
+    setLowBalanceAlert(false);
+    setNotificationAlert(false);
+    setPowercutAlert(false);
+    setdgsenseAlert(false);
+    setshowSettingModal(false);
+  };
+
+  const submitRequest = () => {
+    setshowSettingModal(false);
+  };
+
+  return (
+    <View style={Styles.main}>
+      <View style={Styles.cardContainer}>
+        <Image
+          style={Styles.userImage}
+          source={require('../../assets/images/user.png')}
+        />
+        <View style={{alignItems: 'center'}}>
+          <View style={{flexDirection: 'row', marginTop: 5}}>
+            <View style={{width: '10%', alignItems: 'center'}}>
+              <Image
+                style={Styles.svgImage}
+                source={require('../../assets/svg/usersvg.png')}
+              />
+            </View>
+            <Text style={Styles.userDetails}>Welcome! {userName}</Text>
+          </View>
+          <View style={{flexDirection: 'row', marginTop: 5}}>
+            <View style={{width: '10%', alignItems: 'center'}}>
+              <Image
+                style={Styles.svgImage}
+                source={require('../../assets/svg/telephonesvg.png')}
+              />
+            </View>
+            <Text style={Styles.userDetails}>+91 {phoneNumber}</Text>
+          </View>
+          <View style={{flexDirection: 'row', marginTop: 5}}>
+            <View style={{width: '10%', alignItems: 'center'}}>
+              <Image
+                style={Styles.svgImage}
+                source={require('../../assets/svg/mailsvg.png')}
+              />
+            </View>
+            <Text style={Styles.userDetails}>{email}</Text>
+          </View>
+          <View style={{flexDirection: 'row', marginTop: 5}}>
+            <View style={{width: '10%', alignItems: 'center'}}>
+              <Image
+                style={Styles.svgImage}
+                source={require('../../assets/svg/metersvg.png')}
+              />
+            </View>
+            <Text style={Styles.userDetails}>{meterSerialNumber}</Text>
+          </View>
+        </View>
+      </View>
+      <View style={Styles.infoCard}>
+        <Text>LightHouseIoT Solutions Pvt ltd</Text>
+        {/* <View>
+          <Text
+            style={{
+              fontSize: 15,
+              color: Color.colorNative,
+              fontFamily: 'Poppins-Light',
+            }}>
+            {' '}
+            Balance
+          </Text>
+          <Text style={{alignSelf: 'center', color: 'grey'}}>{balance}</Text>
+        </View>
+        <View>
+          <Text
+            style={{
+              fontSize: 15,
+              color: Color.colorNative,
+              fontFamily: 'Poppins-Light',
+            }}>
+            Consumption
+          </Text>
+          <Text style={{alignSelf: 'center', color: 'grey'}}>
+            {todayActiveEnergy}
+          </Text>
+        </View>
+        <View>
+          <Text
+            style={{
+              fontSize: 15,
+              color: Color.colorNative,
+              fontFamily: 'Poppins-Light',
+              alignSelf: 'center',
+            }}>
+            Yesterday
+          </Text>
+          <Text
+            style={{
+              fontSize: 15,
+              color: Color.colorNative,
+              fontFamily: 'Poppins-Light',
+            }}>
+            Cumm. Energy
+          </Text>
+          <Text style={{alignSelf: 'center', color: 'grey'}}>
+            {yesterdayCummEnergy}
+          </Text>
+        </View> */}
+      </View>
+
+      <View style={Styles.dataCard}>
+        <View style={Styles.dataImage}>
+          <FastImage
+            style={{width: '100%', height: '100%'}}
+            source={require('../../assets/Icons/rocket1.gif')}
+          />
+        </View>
+        <View style={{width: '75%', alignItems: 'center'}}>
+          <Text>YesterDay PeakLoad</Text>
+          <Text>{peakLoad}</Text>
+        </View>
+      </View>
+      <View style={Styles.dataCard}>
+        <View style={Styles.dataImage}>
+          {operatingMode === 'EB' ? (
+            <FastImage
+              style={{width: '60%', height: '60%'}}
+              source={require('../../assets/Icons/switch.gif')}
+            />
+          ) : (
+            <FastImage
+              style={{width: '60%', height: '60%'}}
+              source={require('../../assets/Icons/generator1.gif')}
+            />
+          )}
+        </View>
+        <View style={{width: '75%', alignItems: 'center'}}>
+          <Text>Meter Running on</Text>
+          <Text>{operatingMode}</Text>
+        </View>
+      </View>
+
+      <View style={staticStyles.main}>
+        <TouchableOpacity style={staticStyles.functionBox} onPress={() => getOngoingData()}>
+          <Image
+              style={staticStyles.icon}
+              source={require('../../assets/Icons/analysis.png')}
+            />
+            <Text
+              style={{
+                color: 'white',
+                position: 'absolute',
+                bottom: 3,
+                fontFamily: 'Poppins-Light',
+                fontSize: 10,
+              }}>
+              Instant Data
+            </Text>
+        </TouchableOpacity>
+        <TouchableOpacity  style={staticStyles.functionBox} onPress={() => setRechargeHistory(true)}>
+          <Image
+              style={staticStyles.icon}
+              source={require('../../assets/Icons/history.png')}
+            />
+            <Text
+              style={{
+                color: 'white',
+                position: 'absolute',
+                bottom: 3,
+                fontFamily: 'Poppins-Light',
+                fontSize: 10,
+              }}>
+              Recharge History
+            </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={staticStyles.functionBox} onPress={logout}>
+          <Image
+              style={staticStyles.icon}
+              source={require('../../assets/Icons/logout.png')}
+            />
+            <Text
+              style={{
+                color: 'white',
+                position: 'absolute',
+                bottom: 3,
+                fontFamily: 'Poppins-Light',
+                fontSize: 10,
+              }}>
+              Log-Out
+            </Text>
+        </TouchableOpacity>
+      </View>
+
+      <Modal transparent={true} visible={onGoingReport} animationType="slide">
+        <View style={staticModalStyle.centeredView}>
+          <View style={staticModalStyle.modalView}>
+            <Text style={staticModalStyle.modalText}>On-GOing Report</Text>
+            <View style={{alignItems: 'center'}}>
+              <Text style={staticModalStyle.Heading}>Voltage Profile</Text>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  width: '100%',
+                  justifyContent: 'space-around',
+                  marginBottom: 10,
+                  borderBottomLeftRadius: 5,
+                  borderBottomRightRadius: 5,
+                  overflow: 'hidden',
+                }}>
+                <View
+                  style={[
+                    staticModalStyle.voltageContainer,
+                    {backgroundColor: '#d10000'},
+                  ]}>
+                  <Text style={staticModalStyle.subHeading}>Vr</Text>
+                  <Text style={staticModalStyle.subData}>{voltage1}</Text>
+                </View>
+                <View
+                  style={[
+                    staticModalStyle.voltageContainer,
+                    {backgroundColor: '#d1cb00'},
+                  ]}>
+                  <Text style={staticModalStyle.subHeading}>Vy</Text>
+                  <Text style={staticModalStyle.subData}>{voltage2}</Text>
+                </View>
+                <View
+                  style={[
+                    staticModalStyle.voltageContainer,
+                    {backgroundColor: '#000ad1'},
+                  ]}>
+                  <Text style={staticModalStyle.subHeading}>Vz</Text>
+                  <Text style={staticModalStyle.subData}>{voltage3}</Text>
+                </View>
+              </View>
+              <Text style={staticModalStyle.Heading}>Power Profile</Text>
+              <View>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    width: '100%',
+                    justifyContent: 'space-around',
+                  }}>
+                  <View
+                    style={[
+                      staticModalStyle.powerContainer,
+                      {backgroundColor: '#727272'},
+                    ]}>
+                    <Text style={staticModalStyle.subHeading}>
+                      Active Power
+                    </Text>
+                    <Text style={staticModalStyle.subData}>{activePower}</Text>
+                  </View>
+                  <View
+                    style={[
+                      staticModalStyle.powerContainer,
+                      {backgroundColor: '#727272'},
+                    ]}>
+                    <Text style={staticModalStyle.subHeading}>
+                      Apparant Power
+                    </Text>
+                    <Text style={staticModalStyle.subData}>
+                      {apparentPower}
+                    </Text>
+                  </View>
+                </View>
+                <View>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      width: '100%',
+                      justifyContent: 'space-around',
+                      marginBottom: 1,
+                    }}>
+                    <Text style={staticModalStyle.powerHeading}>kvahDG</Text>
+                    <Text style={staticModalStyle.powerData}>{kvahDG}</Text>
+                  </View>
+                </View>
+                <View>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      width: '100%',
+                      justifyContent: 'space-around',
+                      marginBottom: 1,
+                    }}>
+                    <Text style={staticModalStyle.powerHeading}>kvahGrid</Text>
+                    <Text style={staticModalStyle.powerData}>{kvahGrid}</Text>
+                  </View>
+                </View>
+                <View>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      width: '100%',
+                      justifyContent: 'space-around',
+                      marginBottom: 1,
+                    }}>
+                    <Text style={staticModalStyle.powerHeading}>kwhDG</Text>
+                    <Text style={staticModalStyle.powerData}>{kwhDG}</Text>
+                  </View>
+                </View>
+                <View>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      width: '100%',
+                      justifyContent: 'space-around',
+                      marginBottom: 1,
+                    }}>
+                    <Text style={staticModalStyle.powerHeading}>kwhGrid</Text>
+                    <Text style={staticModalStyle.powerData}>{kwhGrid}</Text>
+                  </View>
+                </View>
+                <View>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      width: '100%',
+                      justifyContent: 'space-around',
+                      marginBottom: 1,
+                    }}>
+                    <Text style={staticModalStyle.powerHeading}>
+                      powerFactor
+                    </Text>
+                    <Text style={staticModalStyle.powerData}>
+                      {powerFactor}
+                    </Text>
+                  </View>
+                </View>
+                <View>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      width: '100%',
+                      justifyContent: 'space-around',
+                      marginBottom: 1,
+                    }}>
+                    <Text style={staticModalStyle.powerHeading}>
+                      updatedDate
+                    </Text>
+                    <Text style={staticModalStyle.powerData}>
+                      {updatedDate}
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+            <TouchableOpacity
+              onPress={() => setOnGoingReport(false)}
+              style={staticModalStyle.closeBtn}>
+              <Text style={{color: 'white', fontFamily: 'Poppins-Regular'}}>
+                BACK
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
+
+      <Modal transparent={true} visible={rechargeHistory} animationType="slide">
+        <View style={staticModalStyle.centeredView}>
+          <View style={staticModalStyle.modalView}>
+            <Text style={staticModalStyle.modalText}>Recharge History</Text>
+
+            <View>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-around',
+                  marginBottom: 20,
+                }}>
+                <View style={{flexDirection: 'row'}}>
+                  <TouchableOpacity onPress={() => setfromOpen(true)}>
+                    <View
+                      style={{
+                        height: 40,
+                        width: 40,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        backgroundColor: Color.colorNative,
+                        borderTopLeftRadius: 10,
+                        borderBottomLeftRadius: 10,
+                      }}>
+                      <Image
+                        style={staticModalStyle.calendarImg}
+                        source={require('../../assets/Icons/calendar.png')}
+                      />
+                    </View>
+                  </TouchableOpacity>
+                  <TextInput
+                    editable={false}
+                    value={fromdate.toDateString()}
+                    style={{
+                      borderWidth: 1,
+                      borderColor: Color.colorNative,
+                      backgroundColor: Color.colorWhitesmoke,
+                      borderBottomRightRadius: 10,
+                      borderTopRightRadius: 10,
+                      borderTopLeftRadius: 0,
+                      overflow: 'hidden',
+                      height: 40,
+                      width: 140,
+                    }}
+                  />
+                  <DatePicker
+                    modal
+                    open={fromOpen}
+                    date={fromdate}
+                    onConfirm={date => {
+                      setfromOpen(false);
+                      setfromDate(date);
+                    }}
+                    onCancel={() => {
+                      setfromOpen(false);
+                    }}
+                  />
+                </View>
+
+                <View style={{flexDirection: 'row'}}>
+                  <TouchableOpacity onPress={() => settoOpen(true)}>
+                    <View
+                      style={{
+                        height: 40,
+                        width: 40,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        backgroundColor: Color.colorNative,
+                        borderTopLeftRadius: 10,
+                        borderBottomLeftRadius: 10,
+                      }}>
+                      <Image
+                        style={staticModalStyle.calendarImg}
+                        source={require('../../assets/Icons/calendar.png')}
+                      />
+                    </View>
+                  </TouchableOpacity>
+                  <TextInput
+                    editable={false}
+                    value={todate.toDateString()}
+                    style={{
+                      borderWidth: 1,
+                      borderColor: Color.colorNative,
+                      backgroundColor: Color.colorWhitesmoke,
+                      borderBottomRightRadius: 10,
+                      borderTopRightRadius: 10,
+                      borderTopLeftRadius: 0,
+                      overflow: 'hidden',
+                      height: 40,
+                      width: 140,
+                    }}
+                  />
+                  <DatePicker
+                    modal
+                    open={toOpen}
+                    date={todate}
+                    onConfirm={date => {
+                      settoOpen(false);
+                      setToDate(date);
+                    }}
+                    onCancel={() => {
+                      settoOpen(false);
+                    }}
+                  />
+                </View>
+              </View>
+              <TouchableOpacity
+                style={staticModalStyle.successBtn}
+                onPress={() => getRechargeHistory()}>
+                <Text style={{color: 'white', fontFamily: 'Poppins-Regular'}}>
+                  Get Recharge History
+                </Text>
+              </TouchableOpacity>
+            </View>
+
+            <View style={{display: showList ? 'flex' : 'none'}}>
+              <View style={staticModalStyle.rechargeContainer}>
+                <FlatList
+                  data={rechargeData}
+                  renderItem={({item}) => (
+                    <View style={staticModalStyle.listCard}>
+                      <View style={{justifyContent: 'center', paddingLeft: 10}}>
+                        <Image
+                          style={staticModalStyle.calendarImg}
+                          source={require('../../assets/Icons/right-arrow.png')}
+                        />
+                      </View>
+                      <View style={{justifyContent: 'center'}}>
+                        <Text
+                          style={{
+                            fontSize: 15,
+                            fontWeight: 'bold',
+                            color: 'black',
+                            marginLeft: 20,
+                            marginBottom: 5,
+                          }}>
+                          {item.transactionID.toString()}
+                        </Text>
+                        <Text
+                          style={{
+                            fontSize: 12,
+                            fontWeight: 'bold',
+                            color: 'black',
+                            marginLeft: 20,
+                          }}>
+                          {item.rechargeDate.toString()}
+                        </Text>
+                      </View>
+                      <View style={{justifyContent: 'center', marginLeft: 30}}>
+                        <Text style={{color: 'green', fontWeight: 'bold'}}>
+                          ₹{item.amount.toString()}
+                        </Text>
+                        <Text style={{color: 'green'}}>
+                          {item.status.toString()}
+                        </Text>
+                      </View>
+                    </View>
+                  )}
+                  keyExtractor={item => item.transactionID}
+                />
+
+                <TouchableOpacity onPress={createPDF}>
+                  <Image
+                    style={staticModalStyle.fileIcon}
+                    source={require('../../assets/Icons/file.png')}
+                  />
+                </TouchableOpacity>
+              </View>
+            </View>
+
+            <TouchableOpacity
+              style={staticModalStyle.closeBtn}
+              onPress={() => {
+                setRechargeHistory(false);
+                setShowList(false);
+              }}>
+              <Text style={{color: 'white', fontFamily: 'Poppins-Regular'}}>
+                Back
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
+    </View>
+  );
+};
+
+const Styles = StyleSheet.create({
+  main: {
+    alignItems: 'center',
+    flex: 1,
+  },
+  cardContainer: {
+    height: '43%',
+    width: '99%',
+    shadow: 'grey',
+    elevation: 5,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    marginBottom: 20,
+    overflow: 'hidden',
+    backgroundColor: Color.colorBlue,
+    // backgroundColor: ColorBlueTheme.Blue8,
+    alignItems: 'center',
+  },
+  backImage: {
+    flex: 1,
+    justifyContent: 'center',
+    height: '100%',
+  },
+  userImage: {
+    height: 80,
+    width: 80,
+    marginTop: '8%',
+    marginBottom: 10,
+  },
+  svgImage: {
+    height: 23,
+    width: 23,
+  },
+  userDetails: {
+    color: ColorBlueTheme.Blue3,
+    fontSize: 16,
+    fontFamily: 'Poppins-Light',
+    textAlign: 'right',
+    textAlignVertical: 'center',
+    paddingRight: '5%',
+  },
+  infoCard: {
+    height: '12%',
+    width: '93%',
+    marginTop: -70,
+    marginBottom: 20,
+    borderRadius: 20,
+    backgroundColor: 'rgba(255,255,255,0.98)',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    shadow: 'gray',
+    shadowOffset: 15,
+    shadowOpacity: 0.5,
+    elevation: 5,
+  },
+  listText: {
+    fontSize: 24,
+    padding: 10,
+    color: 'white',
+    backgroundColor: 'skyblue',
+    margin: 10,
+    textAlign: 'center',
+  },
+  listBox: {
+    width: '105%',
+  },
+  dataCard: {
+    width: '95%',
+    height: '12%',
+    backgroundColor: 'rgba(240, 241, 249,1)',
+    marginBottom: 20,
+    shadowColor: 'grey',
+    shadowOffset: 20,
+    shadowOpacity: 0.6,
+    elevation: 5,
+    borderRadius: 5,
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    flexDirection: 'row',
+  },
+  dataImage: {
+    backgroundColor: 'white',
+    width: '25%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: 'grey',
+    shadowOpacity: 0.5,
+    elevation: 10,
+    borderRadius: 5,
+    overflow: 'hidden',
+  },
+  rocketImage: {
+    height: 80,
+    width: 80,
+  },
+  analytics: {
+    height: 90,
+    width: '100%',
+    borderRadius: 20,
+    backgroundColor: Color.colorBlue,
+    shadowColor: 'black',
+    shadowOpacity: 0.5,
+    elevation: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  quickIcons: {
+    height: '50%',
+    width: '50%',
+  },
+});
+const modalStyle = StyleSheet.create({
+  main: {
+    flex: 1,
+  },
+  Heading: {
+    width: '100%',
+    backgroundColor: Color.colorNative,
+    color: 'white',
+    textAlign: 'center',
+    fontSize: 22,
+    fontWeight: 'bold',
+    padding: 15,
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 5,
+  },
+  subHeading: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 20,
+    margin: 4,
+  },
+  subData: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 5,
+  },
+  buttonView: {
+    flex: 1,
+    justifyContent: 'flex-end',
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    backgroundColor: 'rgba(34 ,34 ,34 ,0.4)',
+  },
+  modalView: {
+    width: '99%',
+    // minHeight: '40%',
+    // height: '70%',
+    backgroundColor: '#fff',
+    padding: 10,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    shadowColor: 'white',
+    shadowOpacity: 0.5,
+    elevation: -20,
+  },
+  modalText: {
+    fontSize: 20,
+    marginBottom: 20,
+  },
+  textInput: {
+    borderWidth: 1,
+    borderRadius: 5,
+    width: 300,
+    marginBottom: 20,
+  },
+  abortBtn: {
+    borderRadius: 5,
+    backgroundColor: '#fd6c6c',
+    height: 50,
+    width: 130,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowOpacity: 0.5,
+    shadowColor: 'red',
+    elevation: 10,
+    overflow: 'hidden',
+  },
+  rechargeBtn: {
+    borderRadius: 5,
+    backgroundColor: '#6ecf7b',
+    height: 50,
+    width: 130,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: 'green',
+    shadowOpacity: 0.5,
+    elevation: 10,
+  },
+  voltageContainer: {
+    backgroundColor: 'lightgreen',
+    width: '33.3%',
+    alignItems: 'center',
+  },
+  powerContainer: {
+    backgroundColor: 'lightgreen',
+    width: '50%',
+    alignItems: 'center',
+  },
+  powerHeading: {
+    paddingLeft: '10%',
+    padding: 10,
+    textAlign: 'left',
+    backgroundColor: '#61b5ef',
+    width: '50%',
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  powerData: {
+    textAlign: 'center',
+    fontSize: 18,
+    fontWeight: 'bold',
+    padding: 10,
+    backgroundColor: '#e3e3e3',
+    width: '50%',
+  },
+  btnClose: {
+    width: '30%',
+    marginTop: 30,
+    alignSelf: 'flex-end',
+    shadowColor: 'blue',
+    shadowOpacity: 0.5,
+    elevation: 5,
+    marginBottom: 30,
+  },
+  calendarImg: {
+    height: 40,
+    width: 40,
+  },
+  rechargeContainer: {
+    marginTop: 20,
+    borderRadius: 10,
+    height: 400,
+    width: '100%',
+    borderWidth: 1,
+    borderColor: Color.colorNative,
+    padding: 5,
+  },
+  listText: {
+    fontSize: 24,
+    padding: 10,
+    color: 'white',
+    backgroundColor: 'skyblue',
+    borderColor: 'black',
+    borderWidth: 2,
+    margin: 10,
+    textAlign: 'center',
+  },
+  listCard: {
+    width: '97%',
+    marginBottom: 10,
+    height: 70,
+    backgroundColor: '#eae9ff',
+    shadowColor: 'black',
+    shadowOpacity: 0.5,
+    elevation: 5,
+    alignSelf: 'center',
+    borderRadius: 10,
+    overflow: 'hidden',
+    flexDirection: 'row',
+  },
+  downloadBtn: {
+    height: 40,
+    width: 150,
+    backgroundColor: Color.colorNative,
+    shadowColor: 'black',
+    shadowOpacity: 0.5,
+    elevation: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 5,
+    marginTop: 5,
+  },
+  fileIcon: {
+    height: 70,
+    width: 70,
+    position: 'absolute',
+    bottom: -30,
+    right: 0,
+    shadowColor: 'black',
+    shadowOpacity: 0.5,
+    elevation: 5,
+  },
+  modalBtnTxt: {
+    color: ColorBlueTheme.Blue1,
+    fontSize: 15,
+    fontWeight: 'bold',
+  },
+  modalBtn: {
+    height: 25,
+    width: 100,
+    borderRadius: 5,
+    backgroundColor: Color.colorBlue,
+    color: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+    shadowColor: 'black',
+    shadowOpacity: 0.5,
+    elevation: 5,
+  },
+  tableContainer: {
+    height: 220,
+    shadowColor: ColorBlueTheme.Blue15,
+    shadowOpacity: 0.5,
+    elevation: 5,
+    backgroundColor: 'white',
+    overflow: 'hidden',
+    borderWidth: 0.6,
+    borderColor: ColorBlueTheme.Blue13,
+    marginBottom: 20,
+    borderRadius: 5,
+  },
+  tableHeader: {
+    width: '${100 / 3}%',
+    height: 20,
+    color: ColorBlueTheme.Blue2,
+    fontWeight: 'bold',
+    fontSize: 18,
+    textAlignVertical: 'center',
+    textAlign: 'center',
+    backgroundColor: ColorBlueTheme.Blue12,
+    borderWidth: 0.5,
+    borderColor: 'white',
+  },
+  rowContainer: {
+    flexDirection: 'row',
+    alignSelf: 'center',
+  },
+  tableRows: {
+    width: '${100 / 3}%',
+    height: 20,
+    color: ColorBlueTheme.Blue12,
+    fontSize: 14,
+    textAlignVertical: 'center',
+    textAlign: 'center',
+    backgroundColor: ColorBlueTheme.Blue1,
+    borderWidth: 0.5,
+    borderColor: 'white',
+  },
+  errorBtn: {
+    backgroundColor: '#970000',
+    width: 100,
+    height: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 5,
+    margin: 10,
+    shadowColor: '#970000',
+    shadowOpacity: 0.5,
+    elevation: 5,
+  },
+  successBtn: {
+    backgroundColor: '#097900',
+    width: 100,
+    height: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 5,
+    margin: 10,
+    shadowColor: '#097900',
+    shadowOpacity: 0.5,
+    elevation: 5,
+  },
+  settingRow: {
+    color: ColorBlueTheme.Blue5,
+    fontSize: 18,
+    height: 50,
+    width: '70%',
+    textAlignVertical: 'center',
+    paddingLeft: '5%',
+    borderWidth: 0.3,
+    borderColor: ColorBlueTheme.Blue2,
+  },
+  settingToggle: {
+    width: '30%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 0.3,
+    borderColor: ColorBlueTheme.Blue2,
+  },
+});
+
+const staticStyles = StyleSheet.create({
+  main: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    // alignItems: 'Left',
+    width: '100%',
+    // paddingTop: 10,
+  },
+  listText: {
+    width: 110,
+    height: 110,
+    fontSize: 24,
+    padding: 20,
+    color: 'white',
+    backgroundColor: 'skyblue',
+    borderColor: 'black',
+    borderWidth: 2,
+    margin: 10,
+    textAlign: 'center',
+    textAlignVertical: 'center',
+  },
+  functionBox: {
+    height: 100,
+    width: 100,
+    margin: 5,
+    borderRadius: 20,
+    shadowColor: 'grey',
+    shadowOpacity: 0.7,
+    elevation: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#0f4ebb',
+  },
+  icon: {
+    height: 70,
+    width: 70,
+  },
+  logout: {
+    height: 80,
+    width: 80,
+    shadowColor: 'yellow',
+    elevation: 10,
+  },
+  userCard: {
+    height: 300,
+    width: '95%',
+    backgroundColor: '#0f4ebb',
+    shadowColor: '#0f4ebb',
+    elevation: 10,
+    position: 'absolute',
+    bottom: 30,
+    borderRadius: 10,
+    padding: 20,
+  },
+  textStyle: {
+    color: 'white',
+    textShadowColor: 'white',
+    elevation: 5,
+  },
+  cardText: {
+    color: 'white',
+    fontSize: 25,
+    marginBottom: 10,
+  },
+});
+
+const staticModalStyle = StyleSheet.create({
+  main: {
+    flex: 1,
+  },
+  Heading: {
+    width: '100%',
+    backgroundColor: Color.colorNative,
+    color: 'white',
+    textAlign: 'center',
+    fontSize: 22,
+    fontWeight: 'bold',
+    padding: 15,
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 5,
+  },
+  subHeading: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 20,
+    margin: 4,
+  },
+  subData: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 5,
+  },
+  buttonView: {
+    flex: 1,
+    justifyContent: 'flex-end',
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    backgroundColor: 'rgba(34 ,34 ,34 ,0.4)',
+  },
+  modalView: {
+    width: '100%',
+    backgroundColor: '#fff',
+    padding: 10,
+    borderRadius: 15,
+    shadowColor: 'black',
+    elevation: 10,
+  },
+  modalText: {
+    backgroundColor: ColorBlueTheme.Blue10,
+    color: ColorBlueTheme.Blue0,
+    fontStyle: 'Poppins-Light',
+    textAlign: 'center',
+    borderTopEndRadius: 10,
+    padding: 10,
+    fontSize: 20,
+    marginBottom: 20,
+  },
+  textInput: {
+    borderWidth: 1,
+    borderRadius: 5,
+    width: 300,
+    marginBottom: 20,
+  },
+  abortBtn: {
+    borderRadius: 5,
+    backgroundColor: '#fd6c6c',
+    height: 50,
+    width: 130,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: 'red',
+    elevation: 10,
+    overflow: 'hidden',
+  },
+  rechargeBtn: {
+    borderRadius: 5,
+    backgroundColor: '#6ecf7b',
+    height: 50,
+    width: 130,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: 'green',
+    elevation: 10,
+  },
+  voltageContainer: {
+    backgroundColor: 'lightgreen',
+    width: '33.3%',
+    alignItems: 'center',
+  },
+  powerContainer: {
+    backgroundColor: 'lightgreen',
+    width: '50%',
+    alignItems: 'center',
+  },
+  powerHeading: {
+    paddingLeft: '10%',
+    padding: 10,
+    textAlign: 'left',
+    backgroundColor: '#61b5ef',
+    width: '50%',
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  powerData: {
+    textAlign: 'center',
+    fontSize: 18,
+    fontWeight: 'bold',
+    padding: 10,
+    backgroundColor: '#e3e3e3',
+    width: '50%',
+  },
+  btnClose: {
+    width: '30%',
+    marginTop: 30,
+    alignSelf: 'flex-end',
+    shadowColor: 'blue',
+    elevation: 5,
+    marginBottom: 30,
+  },
+  calendarImg: {
+    height: 30,
+    width: 30,
+  },
+  rechargeContainer: {
+    marginTop: 20,
+    borderRadius: 10,
+    height: 400,
+    width: '100%',
+    borderWidth: 1,
+    borderColor: Color.colorNative,
+    padding: 5,
+  },
+  listText: {
+    fontSize: 24,
+    padding: 10,
+    color: 'white',
+    backgroundColor: 'skyblue',
+    borderColor: 'black',
+    borderWidth: 2,
+    margin: 10,
+    textAlign: 'center',
+  },
+  listCard: {
+    width: '97%',
+    marginBottom: 10,
+    height: 70,
+    backgroundColor: '#eae9ff',
+    shadowColor: 'black',
+    elevation: 5,
+    alignSelf: 'center',
+    borderRadius: 10,
+    overflow: 'hidden',
+    flexDirection: 'row',
+  },
+  downloadBtn: {
+    height: 40,
+    width: 150,
+    backgroundColor: Color.colorNative,
+    shadowColor: 'black',
+    elevation: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 5,
+    marginTop: 5,
+  },
+  fileIcon: {
+    height: 70,
+    width: 70,
+    position: 'absolute',
+    bottom: -30,
+    right: 0,
+    shadowColor: 'black',
+    elevation: 5,
+  },
+  successBtn: {
+    backgroundColor: '#097900',
+    color: 'white',
+    fontFamily: 'Poppins-Regular',
+    width: 'auto',
+    height: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 5,
+    margin: 10,
+    shadowColor: '#097900',
+    shadowOpacity: 1,
+    shadowOffset: 10,
+    elevation: 10,
+  },
+  closeBtn: {
+    backgroundColor: '#970000',
+    width: 150,
+    height: 25,
+    alignSelf: 'flex-end',
+    marginTop: 50,
+    marginBottom: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 5,
+    margin: 10,
+    shadowColor: '#970000',
+    shadowOpacity: 0.5,
+    shadowOffset: 10,
+    elevation: 10,
+  },
+});
+
+export default Dashboard;

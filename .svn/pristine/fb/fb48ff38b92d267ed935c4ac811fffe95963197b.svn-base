@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.reactnativepagerview.react-native-pager-view-merged_res-21:/menu/example_menu2.xml",
+        "source": "com.reactnativepagerview.react-native-pager-view-core-1.7.0-8:/menu/example_menu2.xml"
+    },
+    {
+        "merged": "com.reactnativepagerview.react-native-pager-view-merged_res-21:/menu/example_menu.xml",
+        "source": "com.reactnativepagerview.react-native-pager-view-core-1.7.0-8:/menu/example_menu.xml"
+    }
+]

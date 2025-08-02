@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linear_pwe_global_root"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".PWECouponsActivity"
+    android:orientation="vertical"
+    android:background="@color/pwe_app_background">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:id="@+id/scrollview_container">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="5dp"
+            tools:ignore="MergeRootFrame"
+            android:fitsSystemWindows="false"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/linear_root_header"
+                android:layout_height="160dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+                    <include layout="@layout/pwe_layout_common_header_new"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="140dp"
+                android:id="@+id/linear_fragment_holder_parent"
+                android:layout_marginRight="7dp"
+                android:orientation="vertical"
+                android:layout_marginLeft="7dp"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/linear_fragment_holder"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                </LinearLayout>
+
+                <include layout="@layout/pwe_layout_common_footer_new"/>
+
+            </LinearLayout>
+
+
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    </ScrollView>
+
+
+    <include layout="@layout/pwe_layout_card_page_message_closed" />
+
+    <include layout="@layout/pwe_layout_card_page_message_bottom_sheet" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,367 @@
+import * as React from 'react';
+import {
+  Text,
+  TextInput,
+  Image,
+  View,
+  StatusBar,
+  StyleSheet,
+  TouchableOpacity,
+  KeyboardAvoidingView,
+  Platform,
+} from 'react-native';
+import {Color, FontFamily, FontSize, Border} from '../GlobalStyles';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+const LoginComponent = props => {
+  const [showPassword, setShowPassword] = React.useState(true);
+  const [validationError, setValidationError] = React.useState(false);
+
+  const [userName, setUserName] = React.useState('');
+  const [password, setPassword] = React.useState('');
+
+  React.useEffect(() => {
+    getToken();
+  }, []);
+
+  const getToken = async () => {
+    let tokenExist = await AsyncStorage.getItem('user_Token');
+    if (tokenExist != null) {
+      props.navigation.replace('Home');
+    }
+  };
+
+  const Login = async () => {
+    const url = 'https://api.lighthouseiot.in/api/v1.0/Consumer/Login';
+
+    const loginData = {
+      UserName: userName,
+      Password: password,
+      DeviceType: 'android',
+      DeviceTokenID: 'string',
+      UserId: 0,
+    };
+
+    let result = await fetch(url, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(loginData),
+    });
+
+    result = await result.json();
+
+    if (result.success) {
+      // console.log(result);
+      await AsyncStorage.setItem('user_Token', JSON.stringify(result.data));
+      props.navigation.replace('Home');
+    } else {
+      console.warn(result.message);
+    }
+  };
+
+  const SignUp = () => {
+    console.warn('Signup');
+  };
+
+  return (
+    <KeyboardAvoidingView behavior="none" style={Styles.main}>
+      <StatusBar backgroundColor={'#0f4ebb'} hidden={false} />
+      <View style={Styles.upperBackground}>
+        <Image
+          style={Styles.companyLogo}
+          resizeMode="cover"
+          source={require('../assets/companylogo1-1.png')}
+        />
+
+        <View style={Styles.rectangleView}>
+          <Text style={Styles.loginHeader}>Login</Text>
+
+          <View style={Styles.inputContainer}>
+            <Image
+              style={Styles.svgIcon}
+              source={require('../assets/Icons/userIcon.png')}
+            />
+            <TextInput
+              onChangeText={text => setUserName(text)}
+              style={Styles.textInput}
+              placeholder={'Enter username'}
+            />
+            {validationError ? (
+              <Image
+                style={Styles.svgIcon}
+                source={require('../assets/Icons/error.png')}
+              />
+            ) : null}
+          </View>
+
+          <View style={[Styles.inputContainer, Styles.lineIcon]}>
+            <Image
+              style={Styles.svgIcon}
+              source={require('../assets/Icons/lockIcon.png')}
+            />
+            <TextInput
+              onChangeText={text => setPassword(text)}
+              secureTextEntry={showPassword}
+              style={Styles.textInput}
+              placeholder={'Enter password'}
+            />
+            {showPassword ? (
+              <TouchableOpacity onPress={() => setShowPassword(false)}>
+                <Image
+                  style={Styles.svgIcon}
+                  source={require('../assets/Icons/show.png')}
+                />
+              </TouchableOpacity>
+            ) : (
+              <TouchableOpacity onPress={() => setShowPassword(true)}>
+                <Image
+                  style={Styles.svgIcon}
+                  source={require('../assets/Icons/notShow.png')}
+                />
+              </TouchableOpacity>
+            )}
+          </View>
+
+          {/* <Text style={Styles.forgetPassword}>Forget Password ?</Text> */}
+        </View>
+
+        <TouchableOpacity
+          style={[Styles.loginbuttonContainer, Styles.rectangleViewBorder]}
+          onPress={() => Login()}>
+          <Text style={Styles.login}>Login</Text>
+        </TouchableOpacity>
+
+        {/* <TouchableOpacity
+          style={Styles.signupButtonContainer}
+          onPress={() => SignUp()}>
+          <Text style={Styles.signUp}>Sign up</Text>
+        </TouchableOpacity> */}
+      </View>
+
+      <View style={Styles.rowView}>
+        <Text class={Styles.login}>LightHouseIoT Solutions</Text>
+      </View>
+
+      {/* <View style={Styles.rowView}>        
+        <View style={Styles.iconBox1}>
+          <Image
+            style={Styles.googleIcon}
+            resizeMode="cover"
+            source={require('../assets/logogoogleiconpng-1.png')}
+          />
+        </View>
+
+        <View style={Styles.iconBox2}>
+          <Image
+            style={Styles.linkedinIcon}
+            resizeMode="cover"
+            source={require('../assets/pngegg-1-1.png')}
+          />
+        </View>
+
+        <View style={Styles.iconBox3}>
+          <Image
+            style={Styles.instaIcon}
+            resizeMode="cover"
+            source={require('../assets/pngegg-2-1.png')}
+          />
+        </View>
+      </View> */}
+      
+    </KeyboardAvoidingView>
+  );
+};
+
+const Styles = StyleSheet.create({
+  main: {
+    flex: 1,
+    width: '100%',
+    height: '100%',
+    overflow: 'hidden',
+    backgroundColor: Color.colorWhite,
+  },
+  upperBackground: {
+    // top: -109,
+    left: 0,
+    borderBottomRightRadius: 20,
+    borderBottomLeftRadius: 20,
+    // backgroundColor: '#008cf1',
+    backgroundColor: '#0f4ebb',
+    width: '100%',
+    height: '70%',
+    alignItems: 'center',
+  },
+  companyLogo: {
+    top: '14%',
+    width: 150,
+    height: 149,
+  },
+  svgIcon: {
+    height: 40,
+    width: 40,
+    color: 'white',
+  },
+  loginHeader: {
+    left: '5%',
+    top: '5%',
+    fontSize: 40,
+    color: Color.colorWhite,
+    fontFamily: 'Poppins-Light',
+  },
+  lineIcon: {
+    top: '15%',
+  },
+  inputContainer: {
+    top: '10%',
+    width: '90%',
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    height: '20%',
+    flexDirection: 'row',
+    borderRadius: 50,
+    paddingLeft: 5,
+    backgroundColor: 'rgba(144,178,255,0.4)',
+    shadowOpacity: 0.5,
+    shadowColor: 'rgb(144,178,255)',
+    elevation: 7,
+  },
+  textInput: {
+    fontSize: 20,
+    margin: 5,
+    padding: 3,
+    textAlign: 'center',
+    color: '#fff',
+    width: '70%',
+  },
+  rectangleView: {
+    top: '25%',
+    borderRadius: 20,
+    backgroundColor: 'rgba(255, 255, 255, 0.02)',
+    borderColor: 'rgba(255, 255, 255, 0.35)',
+    width: '90%',
+    height: '40%',
+    borderWidth: 1,
+  },
+  rectangleViewBorder: {
+    borderWidth: 1,
+    borderStyle: 'solid',
+    // left: 37,
+    position: 'absolute',
+  },
+  forgetPassword: {
+    top: '85%',
+    fontSize: 15,
+    fontWeight: '700',
+    fontFamily: FontFamily.poppinsBold,
+    left: 30,
+    color: Color.colorWhite,
+    textAlign: 'left',
+    position: 'absolute',
+  },
+  loginbuttonContainer: {
+    top: '96%',
+    width: '40%',
+    height: '7%',
+    borderColor: Color.colorWhite,
+    borderWidth: 1,
+    borderStyle: 'solid',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: Border.br_40xl,
+    shadowOpacity: 1,
+    elevation: 4,
+    shadowRadius: 4,
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    backgroundColor: Color.colorWhite,
+  },
+  signupButtonContainer: {
+    top: '96%',
+    left: '51%',
+    backgroundColor: '#4d4d4d',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '40%',
+    height: '7%',
+    borderRadius: Border.br_40xl,
+    shadowOpacity: 1,
+    elevation: 4,
+    shadowRadius: 4,
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    position: 'absolute',
+  },
+  login: {
+    color: '#086fba',
+    fontFamily: 'Poppins-Light',
+    fontSize: FontSize.size_5xl,
+  },
+  signUp: {
+    fontSize: FontSize.size_5xl,
+    color: Color.colorWhite,
+    textAlign: 'left',
+    fontFamily: 'Poppins-Light',
+    position: 'absolute',
+  },
+  rowView: {
+    position: 'absolute',
+    bottom: '10%',
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+  },
+  iconBox1: {
+    height: 65,
+    width: 68,
+    backgroundColor: Color.colorWhitesmoke,
+    borderRadius: Border.br_3xs,
+    shadowColor: 'grey',
+    shadowOpacity: 0.4,
+    elevation: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  iconBox2: {
+    height: 65,
+    width: 68,
+    backgroundColor: Color.colorWhitesmoke,
+    borderRadius: Border.br_3xs,
+    shadowColor: 'grey',
+    shadowOpacity: 0.4,
+    elevation: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  iconBox3: {
+    height: 65,
+    width: 68,
+    backgroundColor: Color.colorWhitesmoke,
+    borderRadius: Border.br_3xs,
+    shadowColor: 'grey',
+    elevation: 10,
+    shadowOpacity: 0.4,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  googleIcon: {
+    width: 43,
+    height: 45,
+  },
+  linkedinIcon: {
+    width: 42,
+    height: 43,
+  },
+  instaIcon: {
+    width: 42,
+    height: 43,
+  },
+});
+
+export default LoginComponent;

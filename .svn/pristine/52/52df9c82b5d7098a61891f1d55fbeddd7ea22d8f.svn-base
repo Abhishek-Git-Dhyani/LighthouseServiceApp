@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:id="@+id/linear_root_layout"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:orientation="horizontal"
+            android:id="@+id/linear_axis_bank"
+            android:layout_gravity="left">
+
+            <ImageView
+                android:id="@+id/netbaning_bank_logo"
+                android:layout_width="25dp"
+                android:padding="2dp"
+                android:layout_height="25dp" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="left"
+                android:orientation="vertical"
+                android:id="@+id/tt">
+                <TextView
+                    android:id="@+id/netbaning_bank_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Axis bank"
+                    android:textColor="@color/pwe_text_color"
+                    android:textSize="14sp"
+                    android:layout_marginLeft="15dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+       </LinearLayout>
+    </LinearLayout>

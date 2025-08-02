@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/text_note_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/pwe_upi_limit_note_color"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:padding="4dp"
+        android:background="@drawable/note_dash_background"
+        />
+
+    <Button
+        android:id="@+id/button_proceed_for_payment"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Pay"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/pwe_custom_pay_button_background"
+        android:textColor="@color/pwe_button_text_color"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        />
+</LinearLayout>

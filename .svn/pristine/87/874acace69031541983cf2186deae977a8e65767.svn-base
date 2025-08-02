@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@null">
+    <LinearLayout
+        android:id="@+id/popup_window"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:background="@drawable/pwe_rounded_otp_layout"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/pwe_dotted"
+                android:padding="3dp">
+
+                <TextView
+                    android:id="@+id/txt_bnk_otp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:letterSpacing="0.75"
+                    android:text="1 2 3 4 5 6"
+                    android:textColor="@color/pwe_button_color"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp"
+                    android:id="@+id/copy_otp_close_popup"
+                    android:gravity="center">
+                    <ImageView
+
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_cpy"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="@color/pwe_note_color"
+                        android:text="Copy"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:layout_marginRight="20dp"
+                android:paddingTop="15dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="6dp"
+                >
+                <RelativeLayout
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/progress_bar_holder"
+                    >
+                    <ProgressBar
+                        android:id="@+id/circularProgressbar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="50"
+                        android:layout_centerInParent="true"
+                        android:progressDrawable="@drawable/pwe_custom_progressbar"
+                        android:secondaryProgress="100"
+                        />
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/pwe_whitecircle"
+                        android:layout_centerInParent="true"/>
+
+                    <TextView
+                        android:id="@+id/textPStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="15\nLeft"
+                        android:layout_centerInParent="true"
+                        android:textColor="@color/pwe_loader_text_color"
+                        android:textStyle="bold"
+                        android:textSize="7sp" />
+                </RelativeLayout>
+
+                <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/txt_rem_submit_time"
+                    android:textColor="@color/pwe_text_color"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center"
+                    android:textSize="12sp"
+                    android:text="OTP will be submitted automatically in 15s"/>
+            </LinearLayout>
+            </LinearLayout>
+
+
+
+            <custom_ui_components.loader.PWELoader
+                android:layout_margin="5dp"
+                android:id="@+id/progress_auto_otp"
+                style="@style/PWELoaderTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fitsSystemWindows="true"
+                android:visibility="gone"
+                android:indeterminate="true" />
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/pwe_rounded_gradient_button"
+                    android:textColor="@color/white"
+                    android:padding="5dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Confirm &amp; Proceed"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="20dp"
+                    android:id="@+id/btn_confirm_otp"
+                    android:textAllCaps="false"/>
+
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/pwe_rounded_button"
+                    android:textColor="@color/pwe_button_color"
+                    android:padding="5dp"
+                    android:text="Cancel"
+                    android:textSize="14sp"
+                    android:id="@+id/btn_close_otp_popup"
+                    android:textAllCaps="false"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

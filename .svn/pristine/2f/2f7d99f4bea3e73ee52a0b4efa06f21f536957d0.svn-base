@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.dylanvann.fastimage.react-native-fast-image-merged_res-20:/menu/example_menu.xml",
+        "source": "com.dylanvann.fastimage.react-native-fast-image-core-1.7.0-7:/menu/example_menu.xml"
+    },
+    {
+        "merged": "com.dylanvann.fastimage.react-native-fast-image-merged_res-20:/menu/example_menu2.xml",
+        "source": "com.dylanvann.fastimage.react-native-fast-image-core-1.7.0-7:/menu/example_menu2.xml"
+    }
+]

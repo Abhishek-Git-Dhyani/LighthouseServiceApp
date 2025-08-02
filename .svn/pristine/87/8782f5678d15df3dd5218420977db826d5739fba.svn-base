@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:background="@drawable/pwe_custom_card_gray_background"
+    android:elevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linear_root_pwenet"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/text_card_type_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textColor="@color/pwe_title_color"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:text="EMI"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="left|center_vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="left|center"
+                android:id="@+id/linear_change_bank_holder"
+                android:visibility="gone"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/text_change_bank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/pwe_button_color"
+                    android:text="Change Bank"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/pwe_edit" />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:textColor="@color/pwe_button_color"
+                android:minHeight="40dp"
+                android:text="Change Bank"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:textSize="14sp"
+                android:id="@+id/button_change_bank" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right|center"
+                android:id="@+id/linear_change_plan_holder"
+                android:visibility="gone"
+                android:padding="5dp">
+
+
+                <TextView
+                    android:id="@+id/text_change_plan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/pwe_button_color"
+                    android:text="Change Plan"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/pwe_edit" />
+
+            </LinearLayout>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:textColor="@color/pwe_button_color"
+                android:minHeight="40dp"
+                android:text="Change Plan"
+                android:padding="5dp"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:textSize="14sp"
+                android:id="@+id/button_change_plan" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/linear_emi_holder"
+            android:layout_marginTop="5dp">
+
+            <FrameLayout
+                android:layout_weight="0.98"
+                android:id="@+id/emi_frame_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </FrameLayout>
+            <TextView
+                android:layout_weight="0.02"
+                android:id="@+id/text_note_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/pwe_upi_limit_note_color"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:padding="4dp"
+                android:background="@drawable/note_dash_background"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

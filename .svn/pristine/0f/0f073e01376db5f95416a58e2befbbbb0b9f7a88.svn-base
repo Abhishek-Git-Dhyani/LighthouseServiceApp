@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:background="@drawable/pwe_custom_card_gray_background"
+    android:padding="10dp"
+    android:elevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_card_type_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textColor="@color/pwe_title_color"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:text="Net Banking"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/linear_nb_view_holder"
+            android:layout_marginTop="5dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--  Option Grid Start -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <com.easebuzz.payment.kit.ExpandableHeightGridView
+                        android:id="@+id/popular_banks_grid"
+                        android:layout_width="match_parent"
+                        android:numColumns="3"
+                        android:background="@color/pwe_fragment_background"
+                        android:layout_height="match_parent"
+                        />
+
+                </LinearLayout>
+                <!--  Option Grid End -->
+
+                <!--  Option Spinner Start -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linear_netb_searchable_spinner_holder"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/custom_background_white"
+                    android:orientation="horizontal">
+
+                    <listfilter.SearchableSpinner
+                        android:id="@+id/search_spinner"
+                        android:layout_width="match_parent"
+                        android:padding="2dp"
+                        android:gravity="center"
+                        android:dropDownSelector="@drawable/pwe_spinner_selecter"
+                        android:layout_height="45dp"/>
+
+
+                </LinearLayout>
+                <!--  Option Spinner End -->
+
+            </LinearLayout>
+
+
+            <include layout="@layout/pwe_pay_button_layout"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.dylanvann.fastimage.react-native-fast-image-merged_res-20:/layout-v21/notification_action_tombstone.xml",
+        "source": "com.dylanvann.fastimage.react-native-fast-image-core-1.7.0-7:/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "com.dylanvann.fastimage.react-native-fast-image-merged_res-20:/layout-v21/notification_action.xml",
+        "source": "com.dylanvann.fastimage.react-native-fast-image-core-1.7.0-7:/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "com.dylanvann.fastimage.react-native-fast-image-merged_res-20:/layout-v21/notification_template_icon_group.xml",
+        "source": "com.dylanvann.fastimage.react-native-fast-image-core-1.7.0-7:/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "com.dylanvann.fastimage.react-native-fast-image-merged_res-20:/layout-v21/notification_template_custom_big.xml",
+        "source": "com.dylanvann.fastimage.react-native-fast-image-core-1.7.0-7:/layout-v21/notification_template_custom_big.xml"
+    }
+]

@@ -1,0 +1,72 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.swmansion.rnscreens.react-native-screens-merged_res-29:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Abhishek Dhyani\\.gradle\\caches\\transforms-3\\01068459576cc083fd10f2519b887fdc\\transformed\\appcompat-1.4.2\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Abhishek Dhyani\\.gradle\\caches\\transforms-3\\6be23c5517985f19fcabc9b798caadc5\\transformed\\core-1.8.0\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.swmansion.rnscreens.react-native-screens-mergeReleaseResources-27:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Abhishek Dhyani\\.gradle\\caches\\transforms-3\\01068459576cc083fd10f2519b887fdc\\transformed\\appcompat-1.4.2\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Abhishek Dhyani\\.gradle\\caches\\transforms-3\\6be23c5517985f19fcabc9b798caadc5\\transformed\\core-1.8.0\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                }
+            ]
+        }
+    ]
+}

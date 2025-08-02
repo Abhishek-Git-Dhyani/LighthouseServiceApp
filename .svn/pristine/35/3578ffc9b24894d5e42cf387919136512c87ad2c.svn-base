@@ -1,0 +1,77 @@
+<html>
+<head lang= "en ">
+    <meta charset= "UTF-8 ">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://pay.easebuzz.in/ ;">
+    <title></title>
+</head>
+<body>
+
+<form action= "" method= "post" id = 'autosubmit-form'>
+    <input  type='hidden' id = "pwe-id-access-key"  name='access_key' value=''>
+    <input  type='hidden' id = "pwe-id-saved-card-id" name='saved_card_id' value=''>
+    <input  type='hidden' id = "pwe-id-paymentoption" name='paymentoption' value=''>
+    <input  type='hidden' id = "pwe-id-checkboxdebit" name='checkboxdebit' value=''>
+    <input  type='hidden' id = "pwe-id-bankname" name='bankname' value=''>
+    <input  type='hidden' id = "pwe-id-card-num" name='card_num' value=''>
+    <input  type='hidden' id = "pwe-id-name-on-card" name='name_on_card' value=''>
+    <input  type='hidden' id = "pwe-id-card-type" name='cardType' value=''>
+    <input  type='hidden' id = "pwe-id-exp-date" name ='exp_date' value=''>
+    <input  type='hidden' id = "pwe-id-selected-coupon" name='selected_coupon' value=''>
+    <input  type='hidden' id = "pwe-id-otherbankname" name='otherbankname' value=''>
+    <input  type='hidden' id = "pwe-id-cvv" name ='cvv' value=''>
+    <input  type='hidden' id = "pwe-id-saved-card-cvv" name ='saved_card_cvv' value=''>
+    <input  type='hidden' id = "pwe-id-userAgent" name='userAgent' value=''>
+    <input  type='hidden' id = "pwe-id-device" name='device' value=''>
+    <input  type='hidden' id = "pwe-id-checkboxcarddetail" name='checkboxcarddetail' value=''>
+    <input  type='hidden' id = "pwe-id-emi-dict" name='emi_dict' value=''>
+    <input  type='hidden' id = "pwe-id-discount-code" name='discount_code' value=''>
+    <input  type='hidden' id = "pwe-id-mode-selected" name='mode_selected' value=''>
+    <input  type='hidden' id = "pwe-id-isMobile" name ='isMobile' value=''>
+    <input  type='hidden' id = "pwe-id-bank-code" name ='bank_code' value=''>
+    <input  type='hidden' id = "pwe-enach-act-no" name ='debtor_account_no' value=''>
+    <input  type='hidden' id = "pwe-enach-act-holder" name ='debtor_name' value=''>
+    <input  type='hidden' id = "pwe-enach-act-type" name ='debtor_account_type' value=''>
+    <input  type='hidden' id = "pwe-enach-auth-mode" name ='auth_mode' value=''>
+    <input  type='hidden' id = "pwe-enach-debtor-bank-name" name ='debitor_bank_name' value=''>
+    <input  type='hidden' id = "pwe-enach-debtor-bank-code" name ='debitor_bank_code' value=''>
+    <input  type='hidden' id = "pwe-enach-debtor-ifsc" name ='debtor_bank_ifsc' value=''>
+    <input  type='hidden' id = "simpl_data" name ='simpl_data' value=''>
+    <input  type='hidden' id = "pay_later_app" name ='pay_later_app' value=''>
+</form>
+
+<script language="javascript">
+              document.getElementById("autosubmit-form").action = PwePayStatus.getPweAction();
+              document.getElementById("pwe-id-access-key").value = PwePayStatus.getAccessKeyFromApp();
+              document.getElementById("pwe-id-saved-card-id").value = PwePayStatus.getSavedCardIdFromApp();
+              document.getElementById("pwe-id-paymentoption").value = PwePayStatus.getPaymentOptionFromApp();
+              document.getElementById("pwe-id-checkboxdebit").value = PwePayStatus.getCheckBoxDebitFromAPP();
+              document.getElementById("pwe-id-bankname").value = PwePayStatus.getBankNameFromApp();
+              document.getElementById("pwe-id-card-num").value = PwePayStatus.getCardNumFromApp();
+              document.getElementById("pwe-id-name-on-card").value = PwePayStatus.getNameOnCardFromApp();
+              document.getElementById("pwe-id-card-type").value = PwePayStatus.getCardTypeFromApp();
+              document.getElementById("pwe-id-exp-date").value = PwePayStatus.getExpDateFromApp();
+              document.getElementById("pwe-id-selected-coupon").value = PwePayStatus.getSelectedCouponFromApp();
+              document.getElementById("pwe-id-otherbankname").value = PwePayStatus.getOtherBankNameFromApp();
+              document.getElementById("pwe-id-cvv").value = PwePayStatus.getCVVFromApp();
+              document.getElementById("pwe-id-saved-card-cvv").value = PwePayStatus.getSavedCardCVVFromApp();
+              document.getElementById("pwe-id-userAgent").value = PwePayStatus.getUserAgentFromApp();
+              document.getElementById("pwe-id-device").value = PwePayStatus.getDeviceFromApp();
+              document.getElementById("pwe-id-checkboxcarddetail").value = PwePayStatus.getCheckBoxCardDetailFromApp();
+              document.getElementById("pwe-id-emi-dict").value = PwePayStatus.getEMIDictFromApp();
+              document.getElementById("pwe-id-discount-code").value = PwePayStatus.getDiscountCodeFromApp();
+              document.getElementById("pwe-id-mode-selected").value = PwePayStatus.getPaymentOptionFromApp();
+              document.getElementById("pwe-id-isMobile").value = PwePayStatus.getisMobileFromApp();
+              document.getElementById("pwe-id-bank-code").value = PwePayStatus.getBankCodeFromApp();
+              document.getElementById("pwe-enach-act-no").value = PwePayStatus.getEnachActNoFromApp();
+              document.getElementById("pwe-enach-act-holder").value = PwePayStatus.getEnachActHolderNameFromApp();
+              document.getElementById("pwe-enach-act-type").value = PwePayStatus.getEnachActTypeFromApp();
+              document.getElementById("pwe-enach-auth-mode").value = PwePayStatus.getEnachAuthModeFromApp();
+              document.getElementById("pwe-enach-debtor-bank-name").value = PwePayStatus.getEnachBankNameFromApp();
+              document.getElementById("pwe-enach-debtor-bank-code").value = PwePayStatus.getEnachBankCodeFromApp();
+              document.getElementById("pwe-enach-debtor-ifsc").value = PwePayStatus.getEnachIFSCFromApp();
+              document.getElementById("simpl_data").value = PwePayStatus.getSimplEligibilityDataFromApp();
+               document.getElementById("pay_later_app").value = PwePayStatus.getSimplPayLaterAppNameFromApp();
+              document.getElementById("autosubmit-form").submit();
+</script>
+</body>
+</html>

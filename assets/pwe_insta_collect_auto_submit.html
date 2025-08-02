@@ -1,0 +1,44 @@
+<html>
+<head lang= "en ">
+    <meta charset= "UTF-8 ">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://pay.easebuzz.in/ ;">
+    <title></title>
+</head>
+<body>
+
+<form action= "" method= "post" id = 'autosubmit-form'>
+    <input  type='hidden' id = "pwe-id-access-key"  name='access_key' value=''>
+    <input  type='hidden' id = "pwe-id-paymentoption" name='paymentoption' value=''>
+    <input  type='hidden' id = "pwe-id-selected-coupon" name='selected_coupon' value=''>
+    <input  type='hidden' id = "pwe-id-userAgent" name='userAgent' value=''>
+    <input  type='hidden' id = "pwe-id-device" name='device' value=''>
+    <input  type='hidden' id = "pwe-id-is-auto-submit" name ='is_auto_submit' value=''>
+    <input  type='hidden' id = "pwe-id-insta-whatsapp" name ='insta_whatsapp' value=''>
+    <input  type='hidden' id = "pwe-id-insta-sms" name ='insta_sms' value=''>
+    <input  type='hidden' id = "pwe-id-insta-email" name ='insta_email' value=''>
+    <input  type='hidden' id = "pwe-id-insta-account-number" name ='insta_account_number' value=''>
+    <input  type='hidden' id = "pwe-id-insta-ifsc" name ='insta_ifsc' value=''>
+    <input  type='hidden' id = "pwe-id-merchant-name" name ='merchant_name' value=''>
+    <input  type='hidden' id = "pwe-id-isMobile" name ='isMobile' value=''>
+
+</form>
+
+    <script language="javascript">
+        document.getElementById("autosubmit-form").action = PwePayStatus.getPweAction();
+        document.getElementById("pwe-id-access-key").value = PwePayStatus.getAccessKeyFromApp();
+        document.getElementById("pwe-id-paymentoption").value = PwePayStatus.getPaymentOptionFromApp();
+        document.getElementById("pwe-id-selected-coupon").value = PwePayStatus.getSelectedCouponFromApp();
+        document.getElementById("pwe-id-userAgent").value = PwePayStatus.getUserAgentFromApp();
+        document.getElementById("pwe-id-device").value = PwePayStatus.getDeviceFromApp();
+        document.getElementById("pwe-id-is-auto-submit").value = PwePayStatus.getIsAutoDebitFromApp();
+        document.getElementById("pwe-id-insta-whatsapp").value = PwePayStatus.getIsInstaWhatsappFromApp();
+        document.getElementById("pwe-id-insta-sms").value = PwePayStatus.getIsInstaSmsFromApp();
+        document.getElementById("pwe-id-insta-email").value = PwePayStatus.getIsInstaEmailFromApp();
+        document.getElementById("pwe-id-insta-account-number").value = PwePayStatus.getIsInstaAccountNoFromApp();
+        document.getElementById("pwe-id-insta-ifsc").value = PwePayStatus.getIsInstaIfscFromApp();
+        document.getElementById("pwe-id-merchant-name").value = PwePayStatus.getIsMerchantNameFromApp();
+        document.getElementById("pwe-id-isMobile").value = PwePayStatus.getisMobileFromApp();
+        document.getElementById("autosubmit-form").submit();
+    </script>
+</body>
+</html>

@@ -1,0 +1,662 @@
+[
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/design_layout_snackbar.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/design_layout_snackbar.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_discount_coupon_card.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_discount_coupon_card.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/fragment_pwe_wallet.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/fragment_pwe_wallet.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_custom_message_dialog.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_custom_message_dialog.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_action_bar_title_item.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_list_menu_item_icon.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/material_clock_display.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/material_clock_display.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_picker_actions.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_picker_actions.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_tooltip.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_tooltip.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/fragment_pwe_saved_card.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/fragment_pwe_saved_card.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_layout_snackbar.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_layout_snackbar.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/fragment_pwe_emi_bank_list.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/fragment_pwe_emi_bank_list.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/test_design_radiobutton.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/test_design_radiobutton.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/fragment_pwe_debit_credit.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/fragment_pwe_debit_credit.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_item_saved_card.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_item_saved_card.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_item_grid_upi_option.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_item_grid_upi_option.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_insta_collect_dialog.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_insta_collect_dialog.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_picker_dialog.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_picker_dialog.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/text_view_without_line_height.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/text_view_without_line_height.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_action_menu_layout.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_screen_content_include.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_screen_content_include.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_alert_select_dialog_item.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_alert_select_dialog_item.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/design_bottom_navigation_item.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/design_bottom_navigation_item.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/design_navigation_menu_item.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_layout_card_page_message_opened.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_layout_card_page_message_opened.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_action_mode_bar.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_picker_header_selection_text.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_picker_header_selection_text.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_activity_chooser_view_list_item.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_alert_select_dialog_multichoice.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_alert_select_dialog_multichoice.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/design_text_input_start_icon.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/design_text_input_start_icon.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_screen_toolbar.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/material_clock_period_toggle.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/material_clock_period_toggle.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/material_time_chip.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/material_time_chip.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_calendar_month_labeled.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_calendar_month_labeled.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_picker_header_toggle.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_picker_header_toggle.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_list_menu_item_layout.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/autofill_inline_suggestion.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-autofill-1.1.0-15:/layout/autofill_inline_suggestion.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/design_layout_snackbar_include.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/design_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_item_debit_atm.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_item_debit_atm.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/select_dialog_multichoice_material.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_picker_text_input_date.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_picker_text_input_date.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/activity_p_w_e_process_payment.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/activity_p_w_e_process_payment.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_layout_common_footer_new.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_layout_common_footer_new.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_calendar_horizontal.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_calendar_horizontal.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/text_view_with_line_height_from_layout.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/text_view_with_line_height_from_layout.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/material_chip_input_combo.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/material_chip_input_combo.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/fragment_pwe_upi_old.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/fragment_pwe_upi_old.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/design_navigation_item_subheader.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_layout_common_header_new.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_layout_common_header_new.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/text_view_with_line_height_from_style.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/text_view_with_line_height_from_style.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/bottom_sheet_upi.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/bottom_sheet_upi.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/design_navigation_item.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/design_navigation_item.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_bottom_sheet_apply_coupon.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_bottom_sheet_apply_coupon.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_custom_alert_dialog.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_custom_alert_dialog.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/test_reflow_chipgroup.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/test_reflow_chipgroup.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_item_coupon.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_item_coupon.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/test_toolbar_surface.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/test_toolbar_surface.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/fragment_pwe_cancellation_reason.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/fragment_pwe_cancellation_reason.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_calendar_day_of_week.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_calendar_day_of_week.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/text_view_with_line_height_from_appearance.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/text_view_with_line_height_from_appearance.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_layout_snackbar_include.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/fragment_pwecoupons.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/fragment_pwecoupons.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/select_dialog_item_material.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/select_dialog_item_material.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_calendar_year.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_calendar_year.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_search_view.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_search_view.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_dialog_title_material.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_alert_dialog_material.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/design_navigation_item_separator.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/design_navigation_item_separator.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_calendar_month_navigation.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_calendar_month_navigation.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/fragment_pwe_debit_atm_pin.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/fragment_pwe_debit_atm_pin.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_layout_card_page_message_bottom_sheet.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_layout_card_page_message_bottom_sheet.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_layout_certificate_new.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_layout_certificate_new.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/searchable_list_dialog.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/searchable_list_dialog.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_action_menu_item_layout.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/test_design_checkbox.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/test_design_checkbox.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/fragment_pwe_upi.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/fragment_pwe_upi.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_error_dialog.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_error_dialog.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/material_radial_view_group.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/material_radial_view_group.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/support_simple_spinner_dropdown_item.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/custom_progress_bar_layout.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/custom_progress_bar_layout.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/test_toolbar_custom_background.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/test_toolbar_custom_background.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/design_navigation_menu.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/design_navigation_menu.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_action_bar_layout.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_action_bar_layout.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_list_menu_item_radio.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/fragment_pwepayment_options.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/fragment_pwepayment_options.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/design_navigation_item_header.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/design_navigation_item_header.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/design_menu_item_action_area.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/design_menu_item_action_area.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_item_discount_code.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_item_discount_code.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_search_dropdown_item_icons_2line.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/material_clockface_textview.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/material_clockface_textview.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_spinner_dropdown_item.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/bottom_sheet_approve_otp.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/bottom_sheet_approve_otp.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/notification_template_part_chronometer.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-core-1.7.0-11:/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/design_bottom_sheet_dialog.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/design_bottom_sheet_dialog.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/test_chip_zero_corner_radius.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/test_chip_zero_corner_radius.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_screen_simple.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_screen_simple.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/fragment_pwe_enach.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/fragment_pwe_enach.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_calendar_vertical.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_calendar_vertical.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_calendar_months.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_calendar_months.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/fragment_pwe_emi.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/fragment_pwe_emi.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_alert_select_dialog_singlechoice.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_alert_select_dialog_singlechoice.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/material_timepicker.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/material_timepicker.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_item_cancellation_reason.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_item_cancellation_reason.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/fragment_pwe_olamoney.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/fragment_pwe_olamoney.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_item_grid_payment_option.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_item_grid_payment_option.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_calendar_month.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_calendar_month.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_item_grid_upi_option_old.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_item_grid_upi_option_old.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_calendar_day.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_calendar_day.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/redbox_item_title.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-react-native-0.70.15-release-10:/layout/redbox_item_title.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/design_layout_tab_icon.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/design_layout_tab_icon.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/material_textinput_timepicker.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/material_textinput_timepicker.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_screen_simple_overlay_action_mode.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_calendar_days_of_week.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_calendar_days_of_week.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/test_action_chip.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/test_action_chip.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/custom_dialog.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-core-1.7.0-11:/layout/custom_dialog.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_popup_menu_item_layout.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/dev_loading_view.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-react-native-0.70.15-release-10:/layout/dev_loading_view.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/fragment_pwecoupons_details.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/fragment_pwecoupons_details.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/material_time_input.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/material_time_input.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/test_toolbar.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/test_toolbar.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/notification_template_part_time.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-core-1.7.0-11:/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/text_view_with_theme_line_height.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/text_view_with_theme_line_height.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_item_emi_bank.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_item_emi_bank.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_alert_dialog.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_alert_dialog.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/fragment_pwe_insta_collect.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/fragment_pwe_insta_collect.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_picker_header_fullscreen.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_picker_header_fullscreen.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_alert_dialog_actions.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_alert_dialog_actions.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_item_emi_plan.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_item_emi_plan.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/material_clockface_view.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/material_clockface_view.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/redbox_view.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-react-native-0.70.15-release-10:/layout/redbox_view.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_alert_dialog_button_bar_material.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/item_netbanking_child.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/item_netbanking_child.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_action_bar_up_container.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_cascading_menu_item_layout.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_cascading_menu_item_layout.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_layout_card_page_message_closed.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_layout_card_page_message_closed.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/fps_view.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-react-native-0.70.15-release-10:/layout/fps_view.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/material_timepicker_dialog.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/material_timepicker_dialog.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/fragment_pwe_emi_plan.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/fragment_pwe_emi_plan.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/design_layout_tab_text.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/design_layout_tab_text.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_custom_spinner_item.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_custom_spinner_item.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_picker_fullscreen.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_picker_fullscreen.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_picker_header_title_text.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_picker_header_title_text.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_action_mode_close_item_material.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_picker_header_dialog.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_picker_header_dialog.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/activity_pwecoupons_new.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/activity_pwecoupons_new.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_popup_menu_header_item_layout.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_list_menu_item_checkbox.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/material_clock_display_divider.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/material_clock_display_divider.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_alert_dialog_title_material.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_alert_dialog_title_material.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_select_dialog_material.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_toast_view.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_toast_view.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/test_toolbar_elevation.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/test_toolbar_elevation.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_pay_button_layout.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_pay_button_layout.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/fragment_pwe_netbanking.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/fragment_pwe_netbanking.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/spinner_custom_layout.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/spinner_custom_layout.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_picker_text_input_date_range.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_picker_text_input_date_range.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/material_timepicker_textinput_display.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/material_timepicker_textinput_display.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_expanded_menu_layout.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/abc_activity_chooser_view.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/redbox_item_frame.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-react-native-0.70.15-release-10:/layout/redbox_item_frame.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/design_text_input_end_icon.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/design_text_input_end_icon.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/pwe_item_payment_option.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/pwe_item_payment_option.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/mtrl_alert_dialog_title.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-material-1.3.0-14:/layout/mtrl_alert_dialog_title.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/select_dialog_singlechoice_material.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-appcompat-1.4.1-1:/layout/select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/layout/bottom_sheet_upi_old.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/layout/bottom_sheet_upi_old.xml"
+    }
+]

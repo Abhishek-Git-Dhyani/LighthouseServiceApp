@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.henninghall.date_picker.react-native-date-picker-merged_res-19:/layout-v21/notification_action.xml",
+        "source": "com.henninghall.date_picker.react-native-date-picker-core-1.7.0-7:/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "com.henninghall.date_picker.react-native-date-picker-merged_res-19:/layout-v21/notification_template_custom_big.xml",
+        "source": "com.henninghall.date_picker.react-native-date-picker-core-1.7.0-7:/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "com.henninghall.date_picker.react-native-date-picker-merged_res-19:/layout-v21/notification_action_tombstone.xml",
+        "source": "com.henninghall.date_picker.react-native-date-picker-core-1.7.0-7:/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "com.henninghall.date_picker.react-native-date-picker-merged_res-19:/layout-v21/notification_template_icon_group.xml",
+        "source": "com.henninghall.date_picker.react-native-date-picker-core-1.7.0-7:/layout-v21/notification_template_icon_group.xml"
+    }
+]

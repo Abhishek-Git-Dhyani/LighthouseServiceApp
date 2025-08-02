@@ -1,0 +1,194 @@
+[
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-xxxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-xxxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_assets_icons_notshow.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/assets_icons_notshow.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_assets_icons_logout.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/assets_icons_logout.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.lighthouseservice.app-main-40:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_assets_icons_show.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/assets_icons_show.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.lighthouseservice.app-main-40:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-xxhdpi_assets_pngegg11.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-xxhdpi/assets_pngegg11.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_assets_icons_lockicon.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/assets_icons_lockicon.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.lighthouseservice.app-main-40:/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_assets_svg_mailsvg.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/assets_svg_mailsvg.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-xhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-xhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_assets_icons_rupee1.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/assets_icons_rupee1.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.lighthouseservice.app-main-40:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.lighthouseservice.app-main-40:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_assets_icons_generator1.gif.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/assets_icons_generator1.gif"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_assets_svg_usersvg.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/assets_svg_usersvg.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.lighthouseservice.app-main-40:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_assets_icons_rightarrow.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/assets_icons_rightarrow.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-xxhdpi_assets_companylogo11.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-xxhdpi/assets_companylogo11.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.lighthouseservice.app-main-40:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_assets_svg_telephonesvg.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/assets_svg_telephonesvg.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_assets_icons_file.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/assets_icons_file.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backiconmask.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backiconmask.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_assets_icons_switch.gif.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/assets_icons_switch.gif"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.lighthouseservice.app-main-40:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.lighthouseservice.app-main-40:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_assets_icons_usericon.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/assets_icons_usericon.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_assets_icons_history.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/assets_icons_history.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.lighthouseservice.app-main-40:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.lighthouseservice.app-main-40:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-hdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-hdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/mipmap-ldpi_ic_launcher.png.flat",
+        "source": "com.lighthouseservice.app-main-40:/mipmap-ldpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_assets_icons_calendar.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/assets_icons_calendar.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_assets_icons_meter4.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/assets_icons_meter4.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_assets_svg_metersvg.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/assets_svg_metersvg.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.lighthouseservice.app-main-40:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.lighthouseservice.app-main-40:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-xxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-xxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-xxhdpi_assets_logogoogleiconpng1.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-xxhdpi/assets_logogoogleiconpng1.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_assets_icons_rocket1.gif.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/assets_icons_rocket1.gif"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_assets_icons_error.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/assets_icons_error.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_assets_images_user.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/assets_images_user.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-mdpi_assets_icons_analysis.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-mdpi/assets_icons_analysis.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.lighthouseservice.app-main-40:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable-xxhdpi_assets_pngegg21.png.flat",
+        "source": "com.lighthouseservice.app-react-34:/drawable-xxhdpi/assets_pngegg21.png"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/drawable_rn_edit_text_material.xml.flat",
+        "source": "com.lighthouseservice.app-main-40:/drawable/rn_edit_text_material.xml"
+    },
+    {
+        "merged": "com.lighthouseservice.app-merged_res-39:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.lighthouseservice.app-main-40:/mipmap-mdpi/ic_launcher_foreground.png"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/menu/example_menu2.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-core-1.7.0-11:/menu/example_menu2.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/menu/pwe_menu.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/menu/pwe_menu.xml"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/menu/example_menu.xml",
+        "source": "com.easebuzz.react-native-easebuzz-kit-core-1.7.0-11:/menu/example_menu.xml"
+    }
+]

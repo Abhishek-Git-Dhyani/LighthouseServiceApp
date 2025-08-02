@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:background="@drawable/pwe_custom_card_gray_background"
+    android:padding="5dp"
+    android:elevation="2dp"
+    android:orientation="vertical"
+    android:id="@+id/linear_root_enach_layout">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <TextView
+            android:id="@+id/text_card_type_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textColor="@color/pwe_title_color"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:text="E-NACH Mandate"
+            />
+
+        <TextView
+            android:id="@+id/text_name_of_bank_account_holder_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/pwe_title_color"
+            android:gravity="left"
+            android:text="Bank Account Holder Name"
+            android:textSize="13sp"
+            android:layout_marginTop="15dp"/>
+
+        <EditText
+            android:id="@+id/edit_name_of_bank_account_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/custom_background_white"
+            android:hint="Account Holder Name"
+            android:inputType="textPersonName"
+            android:padding="7dp"
+            android:textColor="@color/pwe_text_color"
+            android:textColorHint="@color/pwe_hint_color"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/text_name_of_bank_account_holder_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/pwe_error_color"
+            android:textSize="12sp"
+            android:text=""
+            android:layout_marginTop="5dp"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/text_bank_account_number_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/pwe_title_color"
+                    android:gravity="left"
+                    android:textSize="13sp"
+                    android:text="Bank Account Number"
+                    android:layout_marginTop="15dp"/>
+
+                <EditText
+                    android:id="@+id/edit_bank_account_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/custom_background_white"
+                    android:hint="Account Number"
+                    android:inputType="number"
+                    android:maxLength="26"
+                    android:padding="7dp"
+                    android:textColor="@color/pwe_text_color"
+                    android:textColorHint="@color/pwe_hint_color"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:id="@+id/text_bank_account_no_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/pwe_error_color"
+                    android:textSize="12sp"
+                    android:text=""
+                    android:layout_marginTop="5dp"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1.1">
+
+                <TextView
+                    android:id="@+id/text_bank_account_type_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/pwe_title_color"
+                    android:gravity="left"
+                    android:textSize="13sp"
+                    android:text="Bank Account Type"
+                    android:layout_marginTop="15dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_background_white"
+                    android:orientation="vertical"
+                    android:layout_marginTop="5dp">
+
+                    <Spinner
+                        android:id="@+id/spin_bank_account_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp">
+
+                    </Spinner>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/text_bank_type_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/pwe_error_color"
+                    android:textSize="12sp"
+                    android:text=""
+                    android:layout_marginTop="5dp"
+                    android:visibility="gone"/>
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/pwe_title_color"
+                    android:gravity="left"
+                    android:textSize="13sp"
+                    android:text="Bank IFSC Code"
+                    android:layout_marginTop="15dp"/>
+
+
+                <EditText
+                    android:id="@+id/edit_bank_ifsc_code"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_background_white"
+                    android:hint="Bank IFSC Code"
+                    android:inputType=""
+                    android:padding="7dp"
+                    android:textColor="@color/pwe_text_color"
+                    android:textColorHint="@color/pwe_hint_color"
+                    android:textSize="13sp"/>
+
+
+                <TextView
+                    android:id="@+id/text_ifsc_code_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/pwe_error_color"
+                    android:textSize="12sp"
+                    android:text=""
+                    android:layout_marginTop="5dp"
+                    android:visibility="gone"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/pwe_title_color"
+                android:gravity="left"
+                android:textSize="13sp"
+                android:text="Auth Type"
+                android:layout_marginTop="15dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_background_white"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp">
+
+                <Spinner
+                    android:id="@+id/spin_auth_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp">
+
+                </Spinner>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_auth_type_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/pwe_error_color"
+                android:textSize="12sp"
+                android:text=""
+                android:layout_marginTop="5dp"
+                android:visibility="gone"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_bankList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/pwe_title_color"
+                android:gravity="left"
+                android:textSize="13sp"
+                android:text="Bank Name"
+                android:layout_marginTop="15dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_background_white"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp">
+
+                <Spinner
+                    android:id="@+id/spin_bank_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp">
+
+                </Spinner>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_bank_name_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/pwe_error_color"
+                android:textSize="12sp"
+                android:text=""
+                android:layout_marginTop="5dp"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/pwe_enach_note_color"
+            android:text="*Easebuzz won't deduct any amount from your account."
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="12sp"/>
+
+            <include layout="@layout/pwe_pay_button_layout"/>
+
+    </LinearLayout>
+
+</LinearLayout>

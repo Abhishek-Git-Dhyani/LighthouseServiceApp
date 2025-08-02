@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linear_root_layout_option">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_margin="10dp"
+        android:elevation="5dp"
+        android:background="@drawable/pwe_custom_card_background"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:layout_marginLeft="5dp"
+            android:gravity="center">
+
+
+            <ImageView
+                android:id="@+id/image_payment_option"
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:src="@drawable/placeholder"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0.01">
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="35dp"
+                android:background="@color/pwe_vertical_divider_payment_options_list"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:layout_margin="5dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+
+            <TextView
+                android:id="@+id/text_payment_option"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minLines="1"
+                android:gravity="center_vertical"
+                android:layout_gravity="center"
+                android:textColor="@color/pwe_text_color"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/text_payment_option_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minLines="1"
+                android:gravity="center_vertical"
+                android:layout_gravity="center"
+                android:textColor="@color/pwe_payment_option_note_color"
+                android:textSize="12sp"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            android:layout_marginRight="5dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:focusable="false"
+                android:visibility="visible"
+                android:src="@drawable/pwe_forward"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

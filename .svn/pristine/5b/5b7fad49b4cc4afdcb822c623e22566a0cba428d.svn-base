@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_margin="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linear_debit_atm_root"
+        android:background="@drawable/pwe_custom_card_background"
+        android:padding="10dp">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/img_debit_atm_pin"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:src="@drawable/pwe_not_selected_circle_icon"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TextView
+                android:id="@+id/text_debit_atm_pin_bank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="14sp"
+                android:gravity="center_vertical"
+                android:textColor="@color/pwe_text_color"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:gravity="right">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:focusable="false"
+                android:visibility="visible"
+                android:src="@drawable/pwe_forward"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/drawable-ldpi-v4/search_icon_grey.png",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/drawable-ldpi-v4/search_icon_grey.png"
+    },
+    {
+        "merged": "com.easebuzz.react-native-easebuzz-kit-merged_res-30:/drawable-ldpi-v4/pwe_selected_icon_01.png",
+        "source": "com.easebuzz.react-native-easebuzz-kit-jetified-peb-lib-android-x-18:/drawable-ldpi-v4/pwe_selected_icon_01.png"
+    }
+]

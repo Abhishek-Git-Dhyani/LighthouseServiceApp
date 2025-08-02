@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_bank_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="left"
+        android:padding="2dp"
+        android:singleLine="true"
+        android:text=""
+        android:layout_margin="2dp"
+        android:textColor="@color/pwe_text_color"
+        android:textSize="13sp" />
+</LinearLayout>

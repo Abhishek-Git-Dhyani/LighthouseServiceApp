@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/pwe_grid_item_background"
+        android:layout_margin="10dp"
+        android:elevation="5dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linear_payment_option">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="3dp"
+                    android:gravity="center"
+                    android:layout_margin="2dp">
+
+                    <ImageView
+                        android:id="@+id/img_payment_option"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_margin="5dp"
+                        android:layout_gravity="center"
+                        />
+
+
+                        <TextView
+                            android:id="@+id/text_payment_option"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minLines="2"
+                            android:gravity="center"
+                            android:textColor="@color/pwe_text_color"
+                            android:textSize="12sp"/>
+
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/img_select_image"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="right"
+                    android:focusable="false"
+                    android:visibility="gone"/>
+
+
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

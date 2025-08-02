@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/popup_window"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:background="@android:color/white"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="15dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textStyle="bold"
+                android:textColor="@color/pwe_title_color"
+                android:textSize="18sp"
+                android:text="UPI Payment"/>
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:id="@+id/linear_pwe_scan_qr_holder"
+                android:gravity="center">
+
+                <ProgressBar
+                    android:id="@+id/progress_generating_qr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="30dp"
+                    android:visibility="gone"
+                    android:minWidth="30dp"
+                    android:layout_margin="5dp"
+                    />
+
+                <WebView
+                    android:layout_width="175dp"
+                    android:id="@+id/image_pwe_upi_qr_to_scan"
+                    android:layout_height="175dp"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/linear_normal_upi_note_holder"
+                android:gravity="center">
+
+                <ProgressBar
+                    android:id="@+id/progress_upi_request"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp"
+                    android:layout_margin="5dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/image_upi_req"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:minHeight="35dp"
+                    android:minWidth="35dp"
+                    android:src="@drawable/ic_upi_new"
+                    android:layout_margin="5dp"/>
+
+
+            </LinearLayout>
+
+
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:background="@color/pwe_button_color"
+                android:textColor="@color/pwe_button_text_color"
+                android:padding="5dp"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                android:visibility="gone"
+                android:text="Click here to pay"
+                android:textSize="14sp"
+                android:id="@+id/button_open_upi_apps"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/txt_scan_or_accept"
+                android:visibility="gone"
+                android:textColor="@color/pwe_title_color"
+                android:gravity="center_horizontal"
+                android:text="OR"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_upi_req"
+                android:textColor="@color/pwe_note_color"
+                android:gravity="center_horizontal"
+                android:text=""/>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@null"
+                android:textColor="@color/pwe_error_color"
+                android:padding="5dp"
+                android:textAllCaps="false"
+                android:text="Cancel UPI Transaction"
+                android:textSize="14sp"
+                android:id="@+id/button_cancel_upi_request"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

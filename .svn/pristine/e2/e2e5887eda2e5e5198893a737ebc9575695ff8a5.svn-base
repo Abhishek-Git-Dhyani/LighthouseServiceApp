@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linear_root_cancellation_resoans">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_margin="5dp">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/pwe_check_button_colors"
+            android:buttonTint="@color/pwe_check_button_colors"
+            android:drawableTint="@color/pwe_check_button_colors"
+            android:foregroundTint="@color/pwe_check_button_colors"
+            android:id="@+id/rb_cn_reason"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="false"
+            android:id="@+id/txt_cn_reason"
+            android:minLines="1"
+            android:textColor="@color/pwe_icon_text_color"
+            android:textSize="12sp"
+            android:text=""
+            android:maxLines="3"/>
+    </LinearLayout>
+</LinearLayout>
