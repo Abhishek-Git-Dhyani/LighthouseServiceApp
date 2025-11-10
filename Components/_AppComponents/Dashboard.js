@@ -68,6 +68,8 @@ const Dashboard = props => {
       if (balance < 200) {
         NotifyAlert();
       }
+      console.log(global.submerchant);
+      console.log(["S1168445NEF","ascasc"].includes(global.submerchant));
     }, 2000);
   }, [balance]);
 
@@ -79,6 +81,7 @@ const Dashboard = props => {
             setUserName(data.fullName);
             setMeterNumber(data.userName);
             setToken(data.token);
+            global.submerchant = data.subMerchantId;
         }
     };
 
@@ -105,7 +108,7 @@ const Dashboard = props => {
       },
     });
 
-   // console.log("Rani singh : "+response);
+   // console.log("Shikhu singh : "+response);
 
 
     response = await response.json();
@@ -168,7 +171,7 @@ const Dashboard = props => {
 
     let response = await result.json();
 
-    console.log(response.data);
+    console.log("Meter Static data   "+ result);
 
     setUpdatedOn(response.data.updatedOn);
     setUnitNumber(response.data.unitNumber);
@@ -212,7 +215,7 @@ const Dashboard = props => {
                 source={require('../../assets/svg/usersvg.png')}
               />
             </View>
-            <Text style={[Styles.userDetails,{color: 'white'}]}>Welcome! {userName}</Text>
+            <Text style={[Styles.userDetails,{color: 'white', flexWrap: 'wrap', width : 200}]}>Welcome! {userName}</Text>
           </View>
           <View style={{flexDirection: 'row', marginTop: 5}}>
             <View style={{width: '10%', alignItems: 'center'}}>
@@ -230,7 +233,7 @@ const Dashboard = props => {
       </View>
 
       <View style={Styles.infoCard}>
-        <Text>LightHouseIoT Solutions Pvt ltd</Text>
+        <Text style={{color: 'black'}}>LightHouseIoT Solutions Pvt ltd</Text>
       </View>
 
       <View style={[Styles.dataCard,{backgroundColor:'white'}]}>
@@ -240,49 +243,60 @@ const Dashboard = props => {
             <Text style={Styles.headerText}>Basic Information</Text>
         </View>
         <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-            <Text>Consumer Number</Text>
+            <Text style={{color: 'black'}}>Consumer Number</Text>
             <Text style={Styles.userDetails}>{consumerNo}</Text>
         </View>
         <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-            <Text>Consumer Name</Text>
-            <Text style={Styles.userDetails}>{consumerName}</Text>
+            <Text style={{color: 'black'}}>Consumer Name</Text>
+            <Text style={[Styles.userDetails,{flexWrap: 'wrap', width : 200}]}>{consumerName}</Text>
         </View>
         <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-            <Text>Meter number</Text>
+            <Text style={{color: 'black'}}>Meter number</Text>
             <Text style={Styles.userDetails}>{meterSerialNumber}</Text>
         </View>
         <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-            <Text>Remaining Balance</Text>
+            <Text style={{color: 'black'}}>Remaining Balance</Text>
             <Text style={Styles.userDetails}>{balance}</Text>
         </View>
         <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-            <Text>UpdatedOn</Text>
+            <Text style={{color: 'black'}}>UpdatedOn</Text>
             <Text style={Styles.userDetails}>{updatedOn}</Text>
         </View>
         <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-            <Text>Recharge On</Text>
+            <Text style={{color: 'black'}}>Recharge On</Text>
             <Text style={Styles.userDetails}>{rechargeOn}</Text>
         </View>
-        <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-            <Text>Unit Rate</Text>
-            <Text style={Styles.userDetails}>{unitNumber}</Text>
-        </View>
-        <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-            <Text>Grid Reading</Text>
-            <Text style={Styles.userDetails}>{gridReading}</Text>
-        </View>
-        <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-            <Text>Dg Reading</Text>
-            <Text style={Styles.userDetails}>{dgReading}</Text>
-        </View>
-        <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-            <Text>Today Consumption</Text>
-            <Text style={Styles.userDetails}>{todayConsumption}</Text>
-        </View>
-        <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-            <Text>Current Month Consumption</Text>
-            <Text style={Styles.userDetails}>{currentMonthConsumption}</Text>
-        </View>
+        {
+          !(["S1168445NEF"].includes(submerchant)) && 
+          <>
+            <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}> 
+                <Text style={{color: 'black'}}>Unit Rate</Text>
+                <Text style={Styles.userDetails}>{unitNumber}</Text>
+            </View>
+            <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
+                <Text style={{color: 'black'}}>Grid Reading</Text>
+                <Text style={Styles.userDetails}>{gridReading}</Text>
+            </View>
+            <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
+                <Text style={{color: 'black'}}>Dg Reading</Text>
+                <Text style={Styles.userDetails}>{dgReading}</Text>
+            </View>
+          </>
+        }
+        {
+          !(["S1168445NEF"].includes(submerchant)) && 
+          <>
+            <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
+                <Text style={{color: 'black'}}>Today Consumption</Text>
+                <Text style={Styles.userDetails}>{todayConsumption}</Text>
+            </View>
+            <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
+                <Text style={{color: 'black'}}>Current Month Consumption</Text>
+                <Text style={Styles.userDetails}>{currentMonthConsumption}</Text>
+            </View>
+          </>
+        }
+
       </View>
 
       <View style={[Styles.dataCard,{backgroundColor:'white'}]}>

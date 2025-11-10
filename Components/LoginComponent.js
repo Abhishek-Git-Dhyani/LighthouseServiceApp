@@ -32,36 +32,92 @@ const LoginComponent = props => {
     }
   };
 
-  const Login = async () => {
-    //
-     const url = 'https://api.lighthouseiot.in/api/v1.0/Consumer/Login';
+  // const Login = async () => {
+  //   //
+  //    const url = 'https://api.lighthouseiot.in/api/v1.0/Consumer/Login';
    
-    //const url ='http://103.165.78.188:18599/api/v1.0/Consumer/Login';
+  //   //const url ='http://103.165.78.188:18599/api/v1.0/Consumer/Login';
 
-    const loginData = {
-      UserName: userName,
-      Password: password,
-      DeviceType: 'android',
-      DeviceTokenID: 'string',
-      UserId: 0,
-    };
+  //   const loginData = {
+  //     UserName: userName,
+  //     Password: password,
+  //     DeviceType: 'android',
+  //     DeviceTokenID: 'string',
+  //     UserId: 0,
+  //   };
 
-    let result = await fetch(url, {
+  //   try{
+  //     let result = await fetch(url, {
+  //       method: 'POST',
+  //       headers: {'Content-Type': 'application/json'},
+  //       body: JSON.stringify(loginData),
+  //     }).catch((err) => {
+  //       console.log(err.message);
+  //     });
+
+  //     console.log(result);
+
+  //     result = await result.json();
+  //   }catch (error) {
+  //     console.log('Error Object:', JSON.stringify(error, Object.getOwnPropertyNames(error)));
+  //     console.log('Error Message:', error.message);
+  //     console.log('Error Stack:', error.stack);
+  //   }
+
+    
+
+  //   if (result.success) {
+  //   //  console.log(result);
+  //     await AsyncStorage.setItem('user_Token', JSON.stringify(result.data));
+  //     props.navigation.replace('Home');
+  //   } else {
+  //     console.warn(result.message);
+  //   }
+  // };
+
+  global.submerchant = "";
+
+  const Login = async () => {
+  const url = 'https://api.lighthouseiot.in/api/v1.0/Consumer/Login';
+
+  const loginData = {
+    UserName: userName,
+    Password: password,
+    DeviceType: 'android',
+    DeviceTokenID: 'string',
+    UserId: 0,
+  };
+
+  let result = null; 
+
+  try {
+    const response = await fetch(url, {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(loginData),
     });
 
-    result = await result.json();
+    result = await response.json();
+    console.log('API Response:', result);
 
-    if (result.success) {
-    //  console.log(result);
-      await AsyncStorage.setItem('user_Token', JSON.stringify(result.data));
-      props.navigation.replace('Home');
-    } else {
-      console.warn(result.message);
-    }
-  };
+  } catch (error) {
+    console.log('Error Object:', JSON.stringify(error, Object.getOwnPropertyNames(error)));
+    console.log('Error Message:', error.message);
+    console.log('Error Stack:', error.stack);
+  }
+
+  if (result && result.success) {  
+    await AsyncStorage.setItem('user_Token', JSON.stringify(result.data));
+    global.submerchant = result.data.subMerchantId;
+
+    console.log("Merchant " + global.submerchant);
+    props.navigation.replace('Home');
+  } else if (result) {
+    console.warn(result.message);
+  } else {
+    console.warn('No response received from server');
+  }
+};
 
   const SignUp = () => {
     console.warn('Signup');

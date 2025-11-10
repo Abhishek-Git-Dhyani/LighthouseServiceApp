@@ -57,7 +57,7 @@ const EvDashboard = props => {
     
       const [balance, setBalance] = React.useState(undefined);
       const [consumerName, setConsumerName] = React.useState(undefined);
-      const [deviceId, setDeviceId] = React.useState(undefined);
+      const [deviceId, setDeviceId] = React.useState(null);
       const [eBRate, setEbRate] = React.useState(undefined);
       const [dGRate, setDgRate] = React.useState(undefined);
       const [isDeleted, setIsDeleted] = React.useState(undefined);
@@ -117,13 +117,63 @@ const EvDashboard = props => {
         getToken();
       }, []);
 
-    //   React.useEffect(() => {
-    //     const intervalId = setInterval(() => {
-    //       GetConnectionStatus();
-    //     }, 2000);
+      React.useEffect(() => {
+        if (deviceId && token) {
+          fetchConnectionStatus();
+        }
+      }, [deviceId, token]);
+      
+      const getToken = async () => {
+        let tokenDetail = await AsyncStorage.getItem('Ev_user_Token');
+        data = await JSON.parse(tokenDetail);
 
-    //     return () => clearInterval(intervalId);
-    //   })
+        console.log(data);
+
+        setUserName(data.fullName);
+        setMeterNumber(data.userName);
+        setDeviceId(data.userID);
+        setToken(data.token);
+        DashboardData();
+      };
+
+      const fetchConnectionStatus = async () =>
+      {
+        console.log('fetch Connection status');
+        console.log('device Id '+ deviceId);
+        if(deviceId != null)
+        {
+          const intervalId = setInterval(() => {
+              GetConnectionStatus();
+          }, 2000);
+
+          return () => clearInterval(intervalId);
+        }else{
+          setTimeout(() => {
+            console.log('retry attempt');
+            fetchConnectionStatus();
+          }, 10000);
+        }
+      }
+
+      const GetConnectionStatus = async () =>
+      {
+        // const url = `https://api.lighthouseiot.in/api/v1.0/Devices/GetDeviceConnectionStatus?id=${deviceId}`;
+        const url = `https://api.lighthouseiot.in/api/v1.0/Consumer/LoadConnectionStatus`;
+        let result = await fetch(url, {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+        });
+        response = await result.json();
+        console.log(response);
+        if(isOn == !response)
+        {
+          setIsLoading(false);
+        }
+        setIsOn(response);        
+      }
 
       const getStatics = async () => {
         const url = 'https://api.lighthouseiot.in/api/v1.0/Consumer/GetStatics';
@@ -225,7 +275,7 @@ const EvDashboard = props => {
           // urlBody.firstname = firstName.replace(/\s+/g, '');
           urlBody.hash = generateInitiateHash(urlBody);
           //for Production
-          console.log(subMerchantId);
+          // console.log(subMerchantId);
           urlBody.sub_merchant_id = subMerchantId == null ? easeBuzzCredintial.subMerchantId : subMerchantId;
           //Testing envronment
           // urlBody.sub_merchant_id = easeBuzzCredintial.subMerchantId;
@@ -384,26 +434,6 @@ const EvDashboard = props => {
           });
       };
 
-      const GetConnectionStatus = async () =>
-      {
-        const url = `https://api.lighthouseiot.in/api/v1.0/Devices/GetDeviceConnectionStatus?id=${deviceId}`;
-        let response = await fetch(url, {
-          method: 'GET',
-          headers: {
-            Authorization: `Bearer ${token}`,
-            'Content-Type': 'application/json',
-          },
-        });
-        response = await response.json();
-        console.log(response);
-        if(isOn == !response)
-        {
-          setIsLoading(false);
-        }
-        setIsOn(response);
-        
-      }
-
       const requestStoragePermission = async () => {
         try {
           const granted = await PermissionsAndroid.request(
@@ -519,6 +549,29 @@ const EvDashboard = props => {
         });
         response = await response.json();
         console.log(response);
+
+        setTimeout(() => {
+          fetchInstantData();
+        }, 10000);
+        
+      }
+
+      const fetchInstantData =  async () => {
+        const url = 'https://api.lighthouseiot.in/api/v1.0/Consumer/ConnectDisconnectMeter';
+        let response = await fetch(url, {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            consumerId: deviceId,
+            meterserialno: meterSerialNumber,
+            CommandType: 'Instant',
+          }),
+        });
+        response = await response.json();
+        console.log(response);
       }
     
       const getRechargeHistory = async () => {
@@ -578,45 +631,36 @@ const EvDashboard = props => {
         }, 2000);
       }, [balance]);
     
-      const getToken = async () => {
-        let tokenDetail = await AsyncStorage.getItem('Ev_user_Token');
-        data = await JSON.parse(tokenDetail);
 
-        console.log(data);
-
-        setUserName(data.fullName);
-        setMeterNumber(data.userName);
-        setDeviceId(data.userID);
-        setToken(data.token);
-        DashboardData();
-        MyProfile();
-      };
     
       const DashboardData = async () => {
         
+        // console.log(data.token);
         const url = 'https://api.lighthouseiot.in/api/v1.0/Consumer/Dashboard';
-        let response = await fetch(url, {
+        let result = await fetch(url, {
           method: 'GET',
           headers: {
             Authorization:`Bearer ${data.token}`,
             'Content-Type': 'application/json',
           },
         });
+
+        // console.log(response);
     
-        response = await response.json();
+        response = await result.json();
         
-        console.log("Rani singh : "+response.data);
+        // console.log(response.data);
     
         setBalance(response.data.balance);
         setConsumerName(response.data.consumerName);
         setDeviceId(response.data.deviceID);
         setEbRate(response.data.eBRATE);
         setDgRate(response.data.dGRate);
-        setIsDeleted(response.data.isDeleted);
-        setLastUpdatedDate(response.data.lastUpdatedDate);
-        setNotificationCount(response.data.notificationCount);
-        setTodayActiveEnergy(response.data.todayActiveEnergy);
-        setYesterdayCummEnergy(response.data.yesterdayCummulativeActiveEnergy);
+        // setIsDeleted(response.data.isDeleted);
+        // setLastUpdatedDate(response.data.lastUpdatedDate);
+        // setNotificationCount(response.data.notificationCount);
+        // setTodayActiveEnergy(response.data.todayActiveEnergy);
+        // setYesterdayCummEnergy(response.data.yesterdayCummulativeActiveEnergy);
       };
     
       const MyProfile = async () => {
@@ -629,11 +673,12 @@ const EvDashboard = props => {
           },
         });
         userData = await userData.json();
-        console.log(userData);
-        setProfileName(userData.data.accountName);
-        setPhoneNumber(userData.data.mobileNumber);
-        setEmail(userData.data.email);
-        setMeterSerialNumber(userData.data.accountNo);
+        // console.log('This is the my profile data ');
+        // console.log(userData);
+        // setProfileName(userData.data.accountName);
+        // setPhoneNumber(userData.data.mobileNumber);
+        // setEmail(userData.data.email);
+        // setMeterSerialNumber(userData.data.accountNo);
       };
     
       const resetSettings = () => {

@@ -197,39 +197,71 @@ const Recharge = () => {
       //urlBody.sub_merchant_id = easeBuzzCredintial.subMerchantId;
 
       // From Here
-      let getStaticsData;
-      getStatics()
-        .then(async data => {
-          getStaticsData = data;
-          // console.log(getStaticsData);
-          let bodyData = {
-            ConsumerId: meterNumber,
-            Amount: parseInt(urlBody.amount, 10).toString(),
-            TransactionId: urlBody.txnid,
-            Status: 'Pending',
-            DeviceID: getStaticsData.deviceID,
-            BankName: 'none',
-            Mode: 'Online',
-            EasepayId: '',
-            Remarks: '',
-            RechargeBy: urlBody.firstname,
-          };
+      try{
+        const getStaticsData = await getStatics();
 
-          const url =
-              'https://api.lighthouseiot.in/api/v1.0/Consumer/RechargeMeter';
-            let apiResponse = await fetch(url, {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(bodyData),
-            });
-            console.log(apiResponse);
-            
+        let bodyData = {
+          ConsumerId: meterNumber,
+          Amount: parseInt(urlBody.amount, 10).toString(),
+          TransactionId: urlBody.txnid,
+          Status: 'Pending',
+          DeviceID: getStaticsData.deviceID,
+          BankName: 'none',
+          Mode: 'Online',
+          EasepayId: '',
+          Remarks: '',
+          RechargeBy: urlBody.firstname,
+        };
+
+        const rechargeUrl = 'https://api.lighthouseiot.in/api/v1.0/Consumer/RechargeMeter';
+
+        const apiResponse = await fetch(rechargeUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(bodyData),
         })
-        .catch(error => {
-          // console.log(error);
-        });
+        console.log(apiResponse);
+      }
+      catch (error) {
+        console.log('Error in getStatics or RechargeMeter:', error);
+        alert("Error in initiating Recharge");
+        return;
+      }
+
+      // getStatics()
+      //   .then(async data => {
+      //     getStaticsData = data;
+      //     // console.log(getStaticsData);
+      //     let bodyData = {
+      //       ConsumerId: meterNumber,
+      //       Amount: parseInt(urlBody.amount, 10).toString(),
+      //       TransactionId: urlBody.txnid,
+      //       Status: 'Pending',
+      //       DeviceID: getStaticsData.deviceID,
+      //       BankName: 'none',
+      //       Mode: 'Online',
+      //       EasepayId: '',
+      //       Remarks: '',
+      //       RechargeBy: urlBody.firstname,
+      //     };
+
+      //     const url =
+      //         'https://api.lighthouseiot.in/api/v1.0/Consumer/RechargeMeter';
+      //       let apiResponse = await fetch(url, {
+      //         method: 'POST',
+      //         headers: {
+      //           'Content-Type': 'application/json',
+      //         },
+      //         body: JSON.stringify(bodyData),
+      //       });
+      //       console.log(apiResponse);
+            
+      //   })
+      //   .catch(error => {
+      //     // console.log(error);
+      //   });
       // End Here
 
       const formBody = Object.keys(urlBody)
@@ -249,7 +281,7 @@ const Recharge = () => {
         body: formBody,
       });
       response = await response.json();
-      // console.log(response);
+      console.log(response);
       callPaymentGateway();
     }
     else{
@@ -476,7 +508,7 @@ const getRechargeHistory = async () => {
                 </View> */}
               <View style={Styles.idContainer}>
                 <Text style={Styles.textStyle}>{item.transactionID}</Text>
-                <Text style={{fontFamily: 'Poppins-Light'}}>
+                <Text style={{fontFamily: 'Poppins-Light',color: 'black'}}>
                   {item.rechargeDate}
                 </Text>
               </View>

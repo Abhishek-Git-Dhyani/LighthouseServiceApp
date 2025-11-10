@@ -106,32 +106,32 @@ const ConsumerProfile = props => {
         }
     };
 
-    const [EvUserName, setEvUserName] = React.useState('drvinay2610@gmail.com');
-    const [EvPassword, setEvPassword] = React.useState('0000000000000062');
+    const [EvUserName, setEvUserName] = React.useState('Piush13@lighthouse.in');
+    const [EvPassword, setEvPassword] = React.useState('0000000000001335');
 
     const EvLogin = async () => {
         const url = 'https://api.lighthouseiot.in/api/v1.0/Consumer/Login';
 
         const loginData = {
-        UserName: EvUserName,
-        Password: EvPassword,
-        DeviceType: 'android',
-        DeviceTokenID: 'string',
-        UserId: 0,
+            UserName: EvUserName,
+            Password: EvPassword,
+            DeviceType: 'android',
+            DeviceTokenID: 'string',
+            UserId: 0,
         };
 
         let result = await fetch(url, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(loginData),
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(loginData),
         });
 
         result = await result.json();
 
         if (result.success) {
         //  console.log(result);
-        await AsyncStorage.setItem('Ev_user_Token', JSON.stringify(result.data));
-        props.navigation.replace('Ev');
+            await AsyncStorage.setItem('Ev_user_Token', JSON.stringify(result.data));
+            props.navigation.replace('Ev');
         } else {
         console.warn(result.message);
         }
@@ -151,7 +151,7 @@ const ConsumerProfile = props => {
                     </View>
                     <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
                         <Text>UserName</Text>
-                        <Text style={styles.userDetails}>{accountName}</Text>
+                        <Text style={[styles.userDetails,{flexWrap: 'wrap', width : 200}]}>{accountName}</Text>
                     </View>
                     <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
                         <Text>Email</Text>
@@ -172,64 +172,72 @@ const ConsumerProfile = props => {
                     
                 </View>
 
-                <View style={styles.cardContainer}>
-                    <View style={styles.listHeader}>
-                        <Image style={styles.headerIcon} source={require('../../assets/Icons/tariff.png')}/>
-                        <Text style={styles.headerText}>User Tariff Details</Text>
-                    </View>
-                    <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-                        <Text>Maintenance Charge</Text>
-                        <Text style={styles.userDetails}>{maintenanceCharge}</Text>
-                    </View>
-                    <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-                        <Text>Other Charge</Text>
-                        <Text style={styles.userDetails}>{otherCharges}</Text>
-                    </View>
-                    <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-                        <Text>Eb Rate</Text>
-                        <Text style={styles.userDetails}>{ebRATE}</Text>
-                    </View>
-                    <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-                        <Text>Dg Rate</Text>
-                        <Text style={styles.userDetails}>{dgRATE}</Text>
-                    </View>
-                </View>
+                {
+                    !(["S1168445NEF"].includes(submerchant)) && 
+                    <>
+                        <View style={styles.cardContainer}>
+                            <View style={styles.listHeader}>
+                                <Image style={styles.headerIcon} source={require('../../assets/Icons/tariff.png')}/>
+                                <Text style={styles.headerText}>User Tariff Details</Text>
+                            </View>
+                            <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
+                                <Text>Maintenance Charge</Text>
+                                <Text style={styles.userDetails}>{maintenanceCharge}</Text>
+                            </View>
+                            <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
+                                <Text>Other Charge</Text>
+                                <Text style={styles.userDetails}>{otherCharges}</Text>
+                            </View>
+                            <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
+                                <Text>Eb Rate</Text>
+                                <Text style={styles.userDetails}>{ebRATE}</Text>
+                            </View>
+                            <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
+                                <Text>Dg Rate</Text>
+                                <Text style={styles.userDetails}>{dgRATE}</Text>
+                            </View>
+                        </View>
+                    </>
+                }
+
+
                 <View style={{flexDirection : 'row' , justifyContent:'space-between'}}>
 
 
-            <TouchableOpacity style={styles.functionBox} onPress={() => EvLogin()}>
-                    <Image
-                        style={styles.icon}
-                        source={require('../../assets/Icons/charging.png')}
-                    />
-                    <Text
-                        style={{
-                        color: 'white',
-                        position: 'absolute',
-                        bottom: 3,
-                        fontFamily: 'Poppins-Light',
-                        fontSize: 10,
-                        }}>
-                       Ev
-                    </Text>
-                </TouchableOpacity>
-                    <TouchableOpacity style={styles.functionBox} onPress={logout}>
-                    <Image
-                        style={styles.icon}
-                        source={require('../../assets/Icons/logout.png')}
-                    />
-                    <Text
-                        style={{
-                        color: 'white',
-                        position: 'absolute',
-                        bottom: 3,
-                        fontFamily: 'Poppins-Light',
-                        fontSize: 10,
-                        }}>
-                           Log-Out
-                    </Text>
-                </TouchableOpacity>
+            {/* <TouchableOpacity style={styles.functionBox} onPress={() => EvLogin()}>
+                <Image
+                    style={styles.icon}
+                    source={require('../../assets/Icons/charging.png')}
+                />
+                <Text
+                    style={{
+                    color: 'white',
+                    position: 'absolute',
+                    bottom: 3,
+                    fontFamily: 'Poppins-Light',
+                    fontSize: 10,
+                    }}>
+                    Ev
+                </Text>
+            </TouchableOpacity> */}
 
+
+            <TouchableOpacity style={styles.functionBox} onPress={logout}>
+                <Image
+                    style={styles.icon}
+                    source={require('../../assets/Icons/logout.png')}
+                />
+                <Text
+                    style={{
+                    color: 'white',
+                    position: 'absolute',
+                    bottom: 3,
+                    fontFamily: 'Poppins-Light',
+                    fontSize: 10,
+                    }}>
+                        Log-Out
+                </Text>
+            </TouchableOpacity>
 
                 </View>
                 

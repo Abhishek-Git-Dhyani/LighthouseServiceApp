@@ -16,13 +16,18 @@ const BillProfile = () => {
     const [fromOpen, setfromOpen] = React.useState(false);
     const [toOpen, settoOpen] = React.useState(false);
     const [billModal, setBillModal] = React.useState(false);
-    const [consumerBills, setConsumerBills] = React.useState();
+    const [consumerBills, setConsumerBills] = React.useState(null);
     const [billReport, setBillReport] = React.useState(false);
     const [bill,setBill] = React.useState('');
+
+    const [deviceID,setDeviceID] = React.useState();
 
     React.useEffect(() => {
         const fetchData = async () => {
             const tokenDetail = await AsyncStorage.getItem('user_Token');
+            console.log('Here is thge token Details')
+            console.log(tokenDetail);
+
             const data = JSON.parse(tokenDetail);
             if (data?.token) {
             setToken(data.token);
@@ -35,9 +40,45 @@ const BillProfile = () => {
     React.useEffect(() => {
         if(token.length > 0)
         {
-            getConsumerBills();
+            getStatics();
         }
     },[token])
+
+    React.useEffect(() => {
+      if (deviceID && token.length > 0) {
+        getConsumerBills();
+      }
+    }, [deviceID, token]);
+
+    const getStatics = async () => {
+    
+    const url = 'https://api.lighthouseiot.in/api/v1.0/Consumer/GetStatics';
+
+    let result = await fetch(url, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
+
+    let response = await result.json();
+
+    console.log(response.data);
+
+    // setUpdatedOn(response.data.updatedOn);
+    // setUnitNumber(response.data.unitNumber);
+    // setRechargeOn(response.data.rechargeOn);
+    // setConsumerNo(response.data.consumerNo);
+    // setGridReading(response.data.gridReading);
+    // setDgReading(response.data.dgReading);
+    // setTodayConsumption(response.data.todayConsumption);
+    setDeviceID(response.data.deviceID);
+    // setCurrentMonthConsumption(response.data.currentMonthConsumption);
+    // setMeterSerialNumber(response.data.meterSerialNumber);
+
+
+  }
 
     const getConsumerBills = async () => {
 
@@ -45,9 +86,7 @@ const BillProfile = () => {
 
         setConsumerBills();
 
-        const deviceId= 116;
-
-        const url = `https://api.lighthouseiot.in/api/v1.0/MeterBill/getCustomerbillById?ConsumerID=${deviceId}`;
+        const url = `https://api.lighthouseiot.in/api/v1.0/MeterBill/getCustomerbillById?ConsumerID=${deviceID}`;
 
         let response = await fetch(url, {
             method: 'GET',
@@ -67,11 +106,10 @@ const BillProfile = () => {
     };
 
     const GenerateDynamicBill = async () => {
-        const deviceId= 116;
         const FromDate = moment(fromdate).format('MM-DD-YYYY');
         const ToDate = moment(todate).format('MM-DD-YYYY');
 
-        const url = `https://api.lighthouseiot.in/api/v1.0/MeterBill/GetDynamicBill?FromDate=${FromDate}&ToDate=${ToDate}&ConsumerID=${deviceId}`;
+        const url = `https://api.lighthouseiot.in/api/v1.0/MeterBill/GetDynamicBill?FromDate=${FromDate}&ToDate=${ToDate}&ConsumerID=${deviceID}`;
 
         let response = await fetch(url, {
             method: 'GET',
@@ -83,7 +121,7 @@ const BillProfile = () => {
 
         let result = await response.json();
 
-        console.log(result);
+        console.log('this is the result '+result);
 
         const inputData = result.data;
 
@@ -116,78 +154,145 @@ const BillProfile = () => {
       }
     };
 
-    const createPDF = async (bill, userName) => {
-      try {
-        requestStoragePermission();
+    // const createPDF = async (bill, userName) => {
+    //   try {
+    //     requestStoragePermission();
 
-        const billFields = [
-          ['Bill Id.', bill.billID, 'Consumer Id.', bill.consumerID],
-          ['Bill From', bill.fromDate, 'Bill To', bill.toDate],
-          ['Amount', bill.usedAmount, 'Last Used Amount', bill.lastUsedAmount],
-          ['Current DG', bill.currentReadingDG, 'Past DG', bill.pastReadingDG],
-          ['Consum DG', bill.consumptionDG, 'Open Amt.', `${bill.openingAmount}/.`],
-          ['Closing Amt.', `${bill.closingAmount}/.`, 'Recharge Amt.', `${bill.rechargeAmount}/.`],
-          ['Other Charges', `${bill.otherCharges}/.`, 'Area Size', bill.areaSize],
-          ['Club Charges', bill.clubCharges, 'MMC Grid', bill.mmcGrid],
-          ['Cam', bill.cam, 'MMC DG', bill.mmcdg],
-          ['Fixed DG', bill.fixedDG, 'Fixed Grid', bill.fixedGrid],
-          ['CS Charges', bill.csCharges, 'Vending Charges', bill.vendingCharges],
-          ['GST', bill.gstCharges, 'Actual Charge', bill.totalActualCharges],
-          ['Bill No.', bill.billNo, 'Load Type', bill.loadType],
-          ['DG', bill.dg, 'Mains', bill.mains],
-          ['Bill Created', bill.billCreated, 'Current Reading', bill.currentReading],
-          ['Past Reading', bill.pastReading, 'Consumption', bill.consumption],
-          ['EB Tariff Rate', bill.ebTariffRate, 'DG Tariff Rate', bill.dgTariffRate],
-          ['EB Total Charges', bill.ebTotalCharges, 'DG Total Charges', bill.dgTotalCharges],
-          ['Total Electricity Bill', bill.totalElectricityBill, '', ''],
-        ];
+    //     const billFields = [
+    //       ['Bill Id.', bill.billID, 'Consumer Id.', bill.consumerID],
+    //       ['Bill From', bill.fromDate, 'Bill To', bill.toDate],
+    //       ['Amount', bill.usedAmount, 'Last Used Amount', bill.lastUsedAmount],
+    //       ['Current DG', bill.currentReadingDG, 'Past DG', bill.pastReadingDG],
+    //       ['Consum DG', bill.consumptionDG, 'Open Amt.', `${bill.openingAmount}/.`],
+    //       ['Closing Amt.', `${bill.closingAmount}/.`, 'Recharge Amt.', `${bill.rechargeAmount}/.`],
+    //       ['Other Charges', `${bill.otherCharges}/.`, 'Area Size', bill.areaSize],
+    //       ['Club Charges', bill.clubCharges, 'MMC Grid', bill.mmcGrid],
+    //       ['Cam', bill.cam, 'MMC DG', bill.mmcdg],
+    //       ['Fixed DG', bill.fixedDG, 'Fixed Grid', bill.fixedGrid],
+    //       ['CS Charges', bill.csCharges, 'Vending Charges', bill.vendingCharges],
+    //       ['GST', bill.gstCharges, 'Actual Charge', bill.totalActualCharges],
+    //       ['Bill No.', bill.billNo, 'Load Type', bill.loadType],
+    //       ['DG', bill.dg, 'Mains', bill.mains],
+    //       ['Bill Created', bill.billCreated, 'Current Reading', bill.currentReading],
+    //       ['Past Reading', bill.pastReading, 'Consumption', bill.consumption],
+    //       ['EB Tariff Rate', bill.ebTariffRate, 'DG Tariff Rate', bill.dgTariffRate],
+    //       ['EB Total Charges', bill.ebTotalCharges, 'DG Total Charges', bill.dgTotalCharges],
+    //       ['Total Electricity Bill', bill.totalElectricityBill, '', ''],
+    //     ];
   
-        let PDFOptions = {
-          html: `
-          <body style="padding:20px; display:flex; flex-direction:column; align-items:center; height:100vh; text-align:center;">
-            <h2 style="color: ${(ColorBlueTheme.Blue8)}; font-weight: light; text-decoration: underline;">LightHouseIoT Solutions Pvt. Ltd.</h2>
-            <h3 style="color: ${(ColorBlueTheme.Blue6)};">Bill Report</h3>
-            <hr>
+    //     let PDFOptions = {
+    //       html: `
+    //       <body style="padding:20px; display:flex; flex-direction:column; align-items:center; height:100vh; text-align:center;">
+    //         <h2 style="color: ${(ColorBlueTheme.Blue8)}; font-weight: light; text-decoration: underline;">LightHouseIoT Solutions Pvt. Ltd.</h2>
+    //         <h3 style="color: ${(ColorBlueTheme.Blue6)};">Bill Report</h3>
+    //         <hr>
   
-            <table border="1" cellspacing="0" cellpadding="5">
-              <tr style="background-color: ${Color.colorNative}; color: white;">
-                <th>Recharge Date</th>
-                <th>Transaction ID</th>
-                <th>Amount</th>
-                <th>Status</th>
-              </tr>
-              ${generateHTMLRows(billFields)}
-            </table>
+    //         <table border="1" cellspacing="0" cellpadding="5">
+    //           <tr style="background-color: ${Color.colorNative}; color: white;">
+    //             <th>Recharge Date</th>
+    //             <th>Transaction ID</th>
+    //             <th>Amount</th>
+    //             <th>Status</th>
+    //           </tr>
+    //           ${generateHTMLRows(billFields)}
+    //         </table>
   
-            <footer style="width: 100%; text-align: center;">
-              <p style="color: black; font-weight: light; text-decoration: underline; position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; padding: 10px 0;">&#169; 2024 LightHouseIoT, All Right Reserved</p>
-            </footer>
+    //         <footer style="width: 100%; text-align: center;">
+    //           <p style="color: black; font-weight: light; text-decoration: underline; position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; padding: 10px 0;">&#169; 2024 LightHouseIoT, All Right Reserved</p>
+    //         </footer>
             
-        </body>`,
-          fileName: `LHT_Recharge_${bill.billID}`,
-          directory: Platform.OS === 'android' ? 'Download' : 'Documents',
-          base64: true
-        };
-        let file = await RNHTMLtoPDF.convert(PDFOptions);
+    //     </body>`,
+    //       fileName: `LHT_Recharge_${bill.billID}`,
+    //       directory: Platform.OS === 'android' ? 'Download' : 'Documents',
+    //       base64: true
+    //     };
+    //     let file = await RNHTMLtoPDF.convert(PDFOptions);
   
-        let filePath = RNFetchBlob.fs.dirs.DownloadDir + `/LHT_Bill${bill.billID}.pdf`;
+    //     let filePath = RNFetchBlob.fs.dirs.DownloadDir + `/LHT_Bill${bill.billID}.pdf`;
   
-        // console.log(RNFetchBlob.fs.dirs.DownloadDir);
+    //     // console.log(RNFetchBlob.fs.dirs.DownloadDir);
   
-        RNFetchBlob.fs.writeFile(filePath, file.base64, 'base64').then(
-          response => {
-            console.log('Success log', response);
-          }
-        ).catch(errors => console.log('Error Log', errors))
+    //     RNFetchBlob.fs.writeFile(filePath, file.base64, 'base64').then(
+    //       response => {
+    //         console.log('Success log', response);
+    //       }
+    //     ).catch(errors => console.log('Error Log', errors))
   
-        // console.log(file.filePath);
-        setFilePath(file.filePath);
-        Alert.alert("Bill Report Downloaded Successfully", "Open it from Download folder", setBillReport(false));
-      } catch (error) {
-        console.log('Failed to generate pdf', error.message);
-        Alert.alert('Failed to generate pdf', error.message, setBillReport(false));
-      }
+    //     // console.log(file.filePath);
+    //     setFilePath(file.filePath);
+    //     Alert.alert("Bill Report Downloaded Successfully", "Open it from Download folder", setBillReport(false));
+    //   } catch (error) {
+    //     console.log('Failed to generate pdf', error.message);
+    //     Alert.alert('Failed to generate pdf', error.message, setBillReport(false));
+    //   }
+    // };
+
+const createPDF = async (bill, userName) => {
+  try {
+    await requestStoragePermission(); 
+
+    const billFields = [
+      ['Bill Id.', bill.billID, 'Consumer Id.', bill.consumerID],
+      ['Bill From', bill.fromDate, 'Bill To', bill.toDate],
+      ['Amount', bill.usedAmount, 'Last Used Amount', bill.lastUsedAmount],
+      ['Current DG', bill.currentReadingDG, 'Past DG', bill.pastReadingDG],
+      ['Consum DG', bill.consumptionDG, 'Open Amt.', `${bill.openingAmount}/.`],
+      ['Closing Amt.', `${bill.closingAmount}/.`, 'Recharge Amt.', `${bill.rechargeAmount}/.`],
+      ['Other Charges', `${bill.otherCharges}/.`, 'Area Size', bill.areaSize],
+      ['Club Charges', bill.clubCharges, 'MMC Grid', bill.mmcGrid],
+      ['Cam', bill.cam, 'MMC DG', bill.mmcdg],
+      ['Fixed DG', bill.fixedDG, 'Fixed Grid', bill.fixedGrid],
+      ['CS Charges', bill.csCharges, 'Vending Charges', bill.vendingCharges],
+      ['GST', bill.gstCharges, 'Actual Charge', bill.totalActualCharges],
+      ['Bill No.', bill.billNo, 'Load Type', bill.loadType],
+      ['DG', bill.dg, 'Mains', bill.mains],
+      ['Bill Created', bill.billCreated, 'Current Reading', bill.currentReading],
+      ['Past Reading', bill.pastReading, 'Consumption', bill.consumption],
+      ['EB Tariff Rate', bill.ebTariffRate, 'DG Tariff Rate', bill.dgTariffRate],
+      ['EB Total Charges', bill.ebTotalCharges, 'DG Total Charges', bill.dgTotalCharges],
+      ['Total Electricity Bill', bill.totalElectricityBill, '', ''],
+    ];
+
+    let PDFOptions = {
+      html: `
+      <body style="padding:20px; display:flex; flex-direction:column; align-items:center; height:100vh; text-align:center;">
+        <h2 style="color: ${(ColorBlueTheme.Blue8)}; font-weight: light; text-decoration: underline;">LightHouseIoT Solutions Pvt. Ltd.</h2>
+        <h3 style="color: ${(ColorBlueTheme.Blue6)};">Bill Report</h3>
+        <hr>
+
+        <table border="1" cellspacing="0" cellpadding="5">
+          <tr style="background-color: ${Color.colorNative}; color: white;">
+            <th>Recharge Date</th>
+            <th>Transaction ID</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+          ${generateHTMLRows(billFields)}
+        </table>
+
+        <footer style="width: 100%; text-align: center;">
+          <p style="color: black; font-weight: light; text-decoration: underline; position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; padding: 10px 0;">&#169; 2024 LightHouseIoT, All Right Reserved</p>
+        </footer>
+      </body>`,
+      fileName: `LHT_Recharge_${bill.billID}`,
+      directory: Platform.OS === 'android' ? 'Download' : 'Documents',
+      base64: true,
     };
+
+    let file = await RNHTMLtoPDF.convert(PDFOptions);
+
+    let filePath = RNFetchBlob.fs.dirs.DownloadDir + `/LHT_Bill${bill.billID}.pdf`;
+
+    await RNFetchBlob.fs.writeFile(filePath, file.base64, 'base64');
+    console.log('PDF saved at:', filePath);
+
+    Alert.alert("Bill Report Downloaded Successfully", "Open it from Download folder", setBillReport(false));
+  } catch (error) {
+    console.log('Failed to generate pdf', error.message);
+    Alert.alert('Failed to generate pdf', error.message, setBillReport(false));
+  }
+};
+
 
     const generateHTMLRows = (fields) => {
         return fields
@@ -236,7 +341,7 @@ const BillProfile = () => {
                             </View>
                         <View style={styles.idContainer}>
                             <Text style={styles.textStyle}>Bill Id : {item.billNo}</Text>
-                            <Text style={{fontFamily: 'Poppins-Light', fontSize: 12}}>
+                            <Text style={{fontFamily: 'Poppins-Light', fontSize: 12,color: 'black'}}>
                              Bill Date : {item.fromDate}
                             </Text>
                         </View>
@@ -247,7 +352,8 @@ const BillProfile = () => {
                             <Text
                             style={{
                                 fontSize: 12,
-                                fontFamily: 'Poppins-Regular'
+                                fontFamily: 'Poppins-Regular',
+                                color: 'black'
                             }}>
                             {item.consumption}KWH
                             </Text>

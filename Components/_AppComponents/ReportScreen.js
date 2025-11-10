@@ -35,7 +35,7 @@ const ReportScreen = () => {
             const tokenDetail = await AsyncStorage.getItem('user_Token');
             const data = await JSON.parse(tokenDetail);
             if (data?.token) {
-            setToken(data.token);
+                setToken(data.token);
             }
         };
 
@@ -45,6 +45,7 @@ const ReportScreen = () => {
     React.useEffect(() => {
         if(token.length > 0)
         {
+            console.log(token);
             getDailyData();
             getWeeklyData();
             getMonthlyData();
@@ -71,22 +72,25 @@ const ReportScreen = () => {
 
         let result = await response.json();
 
-        console.log(result);
-
         const inputData = result.data;
+
+        console.log(inputData);
 
         if(result.message != 'Data Not Exists')
         {
             const transformedData = inputData.map(item => {
                 const stacks = [];
 
-                if (item.dgValue > 0) {
-                    stacks.push({ value: item.dgValue, color: DG_COLOR });
-                }
+                stacks.push({ value: item.dgValue, color: DG_COLOR });
+                stacks.push({ value: item.gridValue, color: GRID_COLOR, marginBottom: 2 });
 
-                if (item.gridValue > 0) {
-                    stacks.push({ value: item.gridValue, color: GRID_COLOR, marginBottom: 2 });
-                }
+                // if (item.dgValue > 0) {
+                //     stacks.push({ value: item.dgValue, color: DG_COLOR });
+                // }
+
+                // if (item.gridValue > 0) {
+                //     stacks.push({ value: item.gridValue, color: GRID_COLOR, marginBottom: 2 });
+                // }
 
                 return {
                     label: item.lable, // or item.label if typo fixed in API
@@ -124,13 +128,17 @@ const ReportScreen = () => {
             const transformedData = inputData.map(item => {
                 const stacks = [];
 
-                if (item.dgValue > 0) {
                 stacks.push({ value: item.dgValue, color: DG_COLOR });
-                }
-
-                if (item.gridValue > 0) {
                 stacks.push({ value: item.gridValue, color: GRID_COLOR, marginBottom: 2 });
-                }
+
+
+                // if (item.dgValue > 0) {
+                // stacks.push({ value: item.dgValue, color: DG_COLOR });
+                // }
+
+                // if (item.gridValue > 0) {
+                // stacks.push({ value: item.gridValue, color: GRID_COLOR, marginBottom: 2 });
+                // }
 
                 return {
                 label: item.lable, // or item.label if typo fixed in API
@@ -163,22 +171,25 @@ const ReportScreen = () => {
             const transformedData = inputData.map(item => {
             const stacks = [];
 
-            if (item.dgValue > 0) {
-                stacks.push({ value: item.dgValue, color: DG_COLOR });
-                }
+            stacks.push({ value: item.dgValue, color: DG_COLOR });
+            stacks.push({ value: item.gridValue, color: GRID_COLOR, marginBottom: 2 });
 
-                if (item.gridValue > 0) {
-                stacks.push({ value: item.gridValue, color: GRID_COLOR, marginBottom: 2 });
-                }
+            // if (item.dgValue > 0) {
+            // stacks.push({ value: item.dgValue, color: DG_COLOR });
+            // }
 
-                return {
-                label: item.lable, // or item.label if typo fixed in API
-                stacks
-                };
-            });
+            // if (item.gridValue > 0) {
+            // stacks.push({ value: item.gridValue, color: GRID_COLOR, marginBottom: 2 });
+            // }
 
-            setMonthStack(transformedData);
-            console.log("Transformed Month Stack:", JSON.stringify(transformedData));
+            return {
+            label: item.lable, // or item.label if typo fixed in API
+            stacks
+            };
+        });
+
+        setMonthStack(transformedData);
+        console.log("Transformed Month Stack:", JSON.stringify(transformedData));
         }
         
     }
@@ -210,7 +221,8 @@ const ReportScreen = () => {
 
     return (
         <ScrollView style={{flex:1, padding: 5}}>
-            <View style={styles.graphContainer}>
+
+            {/* <View style={styles.graphContainer}>
                 <View style={styles.listHeader}>
                     <Image style={styles.headerIcon} source={require('../../assets/Icons/linegraph.png')}/>
                     <Text style={styles.headerText}>Current Data</Text>
@@ -255,8 +267,8 @@ const ReportScreen = () => {
                         endOpacity={0.3}
                     />
                 </View>
-            </View>
-
+            </View> */}
+            
             <View style={styles.graphContainer}>
                 <View style={styles.listHeader}>
                     <Image style={styles.headerIcon} source={require('../../assets/Icons/daily.png')}/>
@@ -272,21 +284,7 @@ const ReportScreen = () => {
                         showGradient
                         gradientColor={'#93d4ff'}
                         isAnimated
-                        autoCenterTooltip
-                        renderTooltip={(item, index) => {
-                            return (
-                                <View style={{
-                                    marginBottom: 20,
-                                    marginLeft: -6,
-                                    backgroundColor: '#6a6a6aff',
-                                    paddingHorizontal: 6,
-                                    paddingVertical: 4,
-                                    borderRadius: 4,
-                                }}>
-                                    <Text style={{color: 'white'}}>ssd</Text>
-                                </View>
-                            );
-                        }}
+                        showValuesAsTopLabel
                     />
                     </View>
                 ) : (
@@ -301,7 +299,7 @@ const ReportScreen = () => {
                 </View>
                 {weekStack.length > 0 ? (
                     <View style={styles.graph}>
-                    <BarChart
+                    {/* <BarChart
                         noOfSections={5}
                         stackData={weekStack}
                         barBorderTopLeftRadius={10}
@@ -309,8 +307,18 @@ const ReportScreen = () => {
                         showGradient
                         gradientColor={'#93d4ff'}
                         isAnimated
+                    /> */}
+                    <BarChart
+                        noOfSections={5}
+                        stackData={weekStack} // can be from API, state, etc.
+                        barBorderTopLeftRadius={10}
+                        barBorderTopRightRadius={10}
+                        showGradient
+                        gradientColor={'#93d4ff'}
+                        isAnimated
+                        showValuesAsTopLabel
                     />
-                    </View>
+                </View>
                 ) : (
                     <Text style={{ color: 'gray', marginTop: 10 }}>No data available.</Text>
                 )}
@@ -334,6 +342,8 @@ const ReportScreen = () => {
                                 showGradient
                                 gradientColor={'#93d4ff'}
                                 isAnimated
+                                
+                                
                             />
                         </View>
                     ) : (
