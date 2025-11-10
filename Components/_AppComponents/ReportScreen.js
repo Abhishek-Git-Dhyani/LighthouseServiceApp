@@ -285,6 +285,11 @@ const ReportScreen = () => {
                         gradientColor={'#93d4ff'}
                         isAnimated
                         showValuesAsTopLabel
+                        topLabelTextStyle={{
+                            color: 'black',
+                            fontSize: 9,
+                            fontWeight: '600',
+                        }}
                     />
                     </View>
                 ) : (
@@ -317,6 +322,11 @@ const ReportScreen = () => {
                         gradientColor={'#93d4ff'}
                         isAnimated
                         showValuesAsTopLabel
+                        topLabelTextStyle={{
+                            color: 'black',
+                            fontSize: 9,
+                            fontWeight: '600',
+                        }}
                     />
                 </View>
                 ) : (
@@ -342,8 +352,12 @@ const ReportScreen = () => {
                                 showGradient
                                 gradientColor={'#93d4ff'}
                                 isAnimated
-                                
-                                
+                                showValuesAsTopLabel
+                                topLabelTextStyle={{
+                                    color: 'black',
+                                    fontSize: 9,
+                                    fontWeight: '600',
+                                }}
                             />
                         </View>
                     ) : (

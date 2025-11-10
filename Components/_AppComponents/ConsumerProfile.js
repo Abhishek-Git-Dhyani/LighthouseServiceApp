@@ -150,23 +150,23 @@ const ConsumerProfile = props => {
                         <Text style={styles.headerText}>User Basic Info</Text>
                     </View>
                     <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-                        <Text>UserName</Text>
+                        <Text style={{color: 'black'}}>UserName</Text>
                         <Text style={[styles.userDetails,{flexWrap: 'wrap', width : 200}]}>{accountName}</Text>
                     </View>
                     <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-                        <Text>Email</Text>
+                        <Text style={{color: 'black'}}>Email</Text>
                         <Text style={styles.userDetails}>{email}</Text>
                     </View>
                     <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-                        <Text>Mobile No.</Text>
+                        <Text style={{color: 'black'}}>Mobile No.</Text>
                         <Text style={styles.userDetails}>{mobileNumber}</Text>
                     </View>
                     <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-                        <Text>Meter Serial No.</Text>
+                        <Text style={{color: 'black'}}>Meter Serial No.</Text>
                         <Text style={styles.userDetails}>{meterSerialNumber}</Text>
                     </View>
                     <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-                        <Text>Address</Text>
+                        <Text style={{color: 'black'}}>Address</Text>
                         <Text style={styles.userDetails}>{address}</Text>
                     </View>
                     
@@ -181,19 +181,19 @@ const ConsumerProfile = props => {
                                 <Text style={styles.headerText}>User Tariff Details</Text>
                             </View>
                             <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-                                <Text>Maintenance Charge</Text>
+                                <Text style={{color: 'black'}}>Maintenance Charge</Text>
                                 <Text style={styles.userDetails}>{maintenanceCharge}</Text>
                             </View>
                             <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-                                <Text>Other Charge</Text>
+                                <Text style={{color: 'black'}}>Other Charge</Text>
                                 <Text style={styles.userDetails}>{otherCharges}</Text>
                             </View>
                             <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-                                <Text>Eb Rate</Text>
+                                <Text style={{color: 'black'}}>Eb Rate</Text>
                                 <Text style={styles.userDetails}>{ebRATE}</Text>
                             </View>
                             <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal: 10}}>
-                                <Text>Dg Rate</Text>
+                                <Text style={{color: 'black'}}>Dg Rate</Text>
                                 <Text style={styles.userDetails}>{dgRATE}</Text>
                             </View>
                         </View>
